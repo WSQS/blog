@@ -1,232 +1,239 @@
 <!DOCTYPE html>
-<html lang="cn">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  
 
-    <meta name="author" content="John Doe">
-
-
-
-
-
-<title>同质 | Sophomore&#39;s Blog</title>
-
-
-
-    <link rel="icon" href="/favicon.ico">
-
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    
-    
-        
-    
-
+  
+  <title>同质 | Sophomore&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我的日子有点太苦了，而更糟的是，我可以断定之后的日子只会更糟。但是，我已经把最痛苦的言辞留给过去的日子了，今后，我一切苦痛的诗性就只是同质的复读。每一首新写的诗都似曾相识，我诗歌的灯已经燃尽，再也不能在生活之中为我撑起一个藏身的角落。那就把逻各斯点着吧，用尽赫拉克利特最后的力量，把精神从火山口推下，换取肉身复活，让肉身言说，以长啸的方式。震破每一段切割我的关系，拉回我的每一块碎片，最终，完美地自我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="同质">
+<meta property="og:url" content="http://example.com/2022/07/13/%E5%90%8C%E8%B4%A8/index.html">
+<meta property="og:site_name" content="Sophomore&#39;s Blog">
+<meta property="og:description" content="我的日子有点太苦了，而更糟的是，我可以断定之后的日子只会更糟。但是，我已经把最痛苦的言辞留给过去的日子了，今后，我一切苦痛的诗性就只是同质的复读。每一首新写的诗都似曾相识，我诗歌的灯已经燃尽，再也不能在生活之中为我撑起一个藏身的角落。那就把逻各斯点着吧，用尽赫拉克利特最后的力量，把精神从火山口推下，换取肉身复活，让肉身言说，以长啸的方式。震破每一段切割我的关系，拉回我的每一块碎片，最终，完美地自我">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-07-13T11:25:02.000Z">
+<meta property="article:modified_time" content="2022-12-30T11:54:13.738Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="poem">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Sophomore&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
 <meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
-    <script>
-        // this function is used to check current theme before page loaded.
-        (() => {
-            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
-            const isDark = currentTheme === 'dark';
-            const pagebody = document.getElementsByTagName('body')[0]
-            if (isDark) {
-                pagebody.classList.add('dark-theme');
-                // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
-            } else {
-                pagebody.classList.remove('dark-theme');
-                // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Light"
-            }
-        })();
-    </script>
-
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Sophomore&#39;s Blog</a></div>
-            <div class="menu navbar-right">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/category">Categories</a>
-                
-                    <a class="menu-item" href="/tag">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                <input id="switch_default" type="checkbox" class="switch_default">
-                <label for="switch_default" class="toggleBtn"></label>
-            </div>
-        </div>
-    </nav>
-
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Sophomore&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
-                </div>
-                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
-            </div>
-            <div class="menu" id="mobile-menu">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/category">Categories</a>
-                
-                    <a class="menu-item" href="/tag">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-            </div>
-        </div>
-    </nav>
-
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sophomore&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
 </header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
-        var mobileMenu = document.getElementById("mobile-menu");
-        if(toggleMenu.classList.contains("active")){
-           toggleMenu.classList.remove("active")
-            mobileMenu.classList.remove("active")
-        }else{
-            toggleMenu.classList.add("active")
-            mobileMenu.classList.add("active")
-        }
-    }
-</script>
-            <div class="main">
-                <div class="container">
+      <div class="outer">
+        <section id="main"><article id="post-同质" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/13/%E5%90%8C%E8%B4%A8/" class="article-date">
+  <time datetime="2022-07-13T11:25:02.000Z" itemprop="datePublished">2022-07-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/poem/">poem</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
     
     
-
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">同质</h1>
-            
-                <div class="post-meta">
-                    
-                        Author: <a itemprop="author" rel="author" href="/">John Doe</a>
-                    
-
-                    
-                        <span class="post-time">
-                        Date: <a href="#">July 13, 2022&nbsp;&nbsp;19:25:02</a>
-                        </span>
-                    
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/poem/">poem</a>
-                            
-                        </span>
-                    
-                </div>
-            
-        </header>
-
-        <div class="post-content">
-            <p>我的日子有点太苦了，<br>而更糟的是，<br>我可以断定之后的日子只会更糟。<br>但是，我已经把最痛苦的言辞留给过去的日子了，<br>今后，我一切苦痛的诗性就只是同质的复读。<br>每一首新写的诗都似曾相识，<br>我诗歌的灯已经燃尽，<br>再也不能在生活之中为我撑起一个藏身的角落。<br>那就把逻各斯点着吧，<br>用尽赫拉克利特最后的力量，<br>把精神从火山口推下，<br>换取肉身复活，<br>让肉身言说，<br>以长啸的方式。<br>震破每一段切割我的关系，<br>拉回我的每一块碎片，<br>最终，完美地自我实现，<br>完美地自我毁灭，<br>在炽热的真理，<br>在灼烧的爱。</p>
-
-        </div>
-
+      <header class="article-header">
         
-            <section class="post-copyright">
-                
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>John Doe</span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/07/13/%E5%90%8C%E8%B4%A8/">http://example.com/2022/07/13/%E5%90%8C%E8%B4%A8/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
-                
-                
-                     <p class="copyright-item">
-                         <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
-                     </p>
-                
+  
+    <h1 class="article-title" itemprop="name">
+      同质
+    </h1>
+  
 
-            </section>
-        
-        <section class="post-tags">
-            <div>
-                <span>Tag(s):</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/poem/"># poem</a>
-                    
-                        
-                </span>
-            </div>
-            <div>
-                <a href="javascript:window.history.back();">back</a>
-                <span>· </span>
-                <a href="/">home</a>
-            </div>
-        </section>
-        <section class="post-nav">
-            
-                <a class="prev" rel="prev" href="/2022/12/09/%E6%97%A0%E9%A2%98%EF%BC%88%E7%89%9B%E9%A1%BF%E8%BF%90%E5%8A%A8%E5%AE%9A%E5%BE%8B%EF%BC%89/">无题</a>
-            
-            
-            <a class="next" rel="next" href="/2002/03/19/hello-world/">Hello World</a>
-            
-        </section>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我的日子有点太苦了，<br>而更糟的是，<br>我可以断定之后的日子只会更糟。<br>但是，我已经把最痛苦的言辞留给过去的日子了，<br>今后，我一切苦痛的诗性就只是同质的复读。<br>每一首新写的诗都似曾相识，<br>我诗歌的灯已经燃尽，<br>再也不能在生活之中为我撑起一个藏身的角落。<br>那就把逻各斯点着吧，<br>用尽赫拉克利特最后的力量，<br>把精神从火山口推下，<br>换取肉身复活，<br>让肉身言说，<br>以长啸的方式。<br>震破每一段切割我的关系，<br>拉回我的每一块碎片，<br>最终，完美地自我实现，<br>完美地自我毁灭，<br>在炽热的真理，<br>在灼烧的爱。</p>
 
-
-    </article>
-</div>
-
-            </div>
-            <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© John Doe | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/13/%E5%90%8C%E8%B4%A8/" data-id="clcafhf7v0001t0vdd6l76pr5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poem/" rel="tag">poem</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/12/09/%E6%97%A0%E9%A2%98%EF%BC%88%E7%89%9B%E9%A1%BF%E8%BF%90%E5%8A%A8%E5%AE%9A%E5%BE%8B%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          无题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2002/03/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MLB/">MLB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MLB/American-League/">American League</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MLB/American-League/Boston-Red-Sox/">Boston Red Sox</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MLB/American-League/New-York-Yankees/">New York Yankees</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Rivalries/">Rivalries</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/poem/">poem</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/poem/%E6%97%A0%E9%A2%98/">无题</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/poem/" rel="tag">poem</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/poem/" style="font-size: 10px;">poem</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2002/03/">March 2002</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/09/%E6%97%A0%E9%A2%98%EF%BC%88%E7%89%9B%E9%A1%BF%E8%BF%90%E5%8A%A8%E5%AE%9A%E5%BE%8B%EF%BC%89/">无题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/13/%E5%90%8C%E8%B4%A8/">同质</a>
+          </li>
+        
+          <li>
+            <a href="/2002/03/19/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
 </footer>
-
     </div>
-</body>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
 </html>
