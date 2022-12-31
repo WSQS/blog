@@ -241,7 +241,7 @@
 
 <script>
     var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    var guest_info = 'nick,mail'.split(',').filter(function(item){
         return GUEST_INFO.indexOf(item) > -1
     });
     var notify = 'false' == true;
@@ -252,7 +252,7 @@
         verify: verify,
         appId: "THENLLJu8XQgKfhIXu2ctGnT-gzGzoHsz",
         appKey: "dy8No1y2ocZAqwmnv2FXWfGH",
-        placeholder: "Just go go",
+        placeholder: "欢迎随便说些什么，写点诗就更好啦",
         pageSize:'10',
         avatar:'mm',
         lang:'zh-cn'
