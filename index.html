@@ -156,20 +156,53 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>这里存放一些技术文档以供参考</p>
-<h1><span id="hexo-zi-dong-sheng-cheng-de-shuo-ming">Hexo自动生成的说明</span><a href="#hexo-zi-dong-sheng-cheng-de-shuo-ming" class="header-anchor">#</a></h1><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2><span id="quick-start">Quick Start</span><a href="#quick-start" class="header-anchor">#</a></h2><h3><span id="create-a-new-post">Create a new post</span><a href="#create-a-new-post" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#hexo-zi-dong-sheng-cheng-de-shuo-ming">Hexo自动生成的说明</a><ul>
+<li><a href="#quick-start">Quick Start</a><ul>
+<li><a href="#create-a-new-post">Create a new post</a></li>
+<li><a href="#run-server">Run server</a></li>
+<li><a href="#generate-static-files">Generate static files</a></li>
+<li><a href="#deploy-to-remote-sites">Deploy to remote sites</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#zi-dong-shi-xian-wen-dang-de-toc">自动实现文档的toc</a><ul>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#option">Option</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<p>这里存放一些技术文档以供参考</p>
+<h1><a href="#hexo-zi-dong-sheng-cheng-de-shuo-ming" class="header-anchor">#</a><span id="hexo-zi-dong-sheng-cheng-de-shuo-ming">Hexo自动生成的说明</span></h1><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2><a href="#quick-start" class="header-anchor">#</a><span id="quick-start">Quick Start</span></h2><h3><a href="#create-a-new-post" class="header-anchor">#</a><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3><span id="run-server">Run server</span><a href="#run-server" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3><a href="#run-server" class="header-anchor">#</a><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3><span id="generate-static-files">Generate static files</span><a href="#generate-static-files" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3><a href="#generate-static-files" class="header-anchor">#</a><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span><a href="#deploy-to-remote-sites" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3><a href="#deploy-to-remote-sites" class="header-anchor">#</a><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h1><a href="#zi-dong-shi-xian-wen-dang-de-toc" class="header-anchor">#</a><span id="zi-dong-shi-xian-wen-dang-de-toc">自动实现文档的toc</span></h1><p><a target="_blank" rel="noopener" href="https://github.com/bubkoo/hexo-toc">github</a></p>
+<h2><a href="#usage" class="header-anchor">#</a><span id="usage">Usage</span></h2><p>在需要目录的位置插入：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- toc --&gt;</span><br></pre></td></tr></table></figure>
+
+<h2><a href="#install" class="header-anchor">#</a><span id="install">Install</span></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-toc --save</span><br></pre></td></tr></table></figure>
+
+<h2><a href="#option" class="header-anchor">#</a><span id="option">Option</span></h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">toc<span class="punctuation">:</span></span><br><span class="line">  maxdepth<span class="punctuation">:</span> <span class="number">3</span></span><br><span class="line">  class<span class="punctuation">:</span> toc</span><br><span class="line">  slugify<span class="punctuation">:</span> transliteration</span><br><span class="line">  decodeEntities<span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">  anchor<span class="punctuation">:</span></span><br><span class="line">    position<span class="punctuation">:</span> after</span><br><span class="line">    symbol<span class="punctuation">:</span> &#x27;#&#x27;</span><br><span class="line">    style<span class="punctuation">:</span> header-anchor</span><br></pre></td></tr></table></figure>
 
       
     </div>
