@@ -5,7 +5,8 @@ title: Poem List
 <h1>Poem List</h1>
 
 <ul>
-    {% for poem in site.poem %}
+    {% assign poems = site.poem | sort: 'date' %}
+    {% for poem in poems %}
     <li>
         <h2><a href="/blog{{ poem.url }}">{{ poem.title }}</a></h2>
         <h3>{{ poem.date|date: "%y.%m.%d" }}</h3>
