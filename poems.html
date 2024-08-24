@@ -8,7 +8,7 @@ title: Poem List
     {% for poem in site.poem %}
     <li>
         <h2><a href="/blog{{ poem.url }}">{{ poem.title }}</a></h2>
-        <h3>{{ poem.date|date: "%y.%b.%d"}}</h3>
+        <h3>{{ poem.date|date: "%y.%m.%d" }}</h3>
         <!-- <p>{{ poem.excerpt }}</p> -->
         <!-- <p>{{ poem.content | markdownify }}</p> -->
     </li>
