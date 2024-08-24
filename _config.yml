@@ -4,3 +4,10 @@ permalink: /:categories/:year/:month/:day/:title:output_ext
 collections:
   poem:
     output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "poem"
+    values:
+      layout: "poem"
