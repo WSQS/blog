@@ -1,8 +1,2 @@
 theme: minima
 permalink: /:categories/:year/:month/:day/:title:output_ext
-
-author:
-  name             : "Sophomore"
-  avatar           : "profile.png"
-  bio              : "Just some body."
-  location         : "Hangzhou"
