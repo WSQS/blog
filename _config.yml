@@ -7,7 +7,7 @@ collections:
 
 defaults:
   - scope:
-      path: "./_pome"
+      path: ""
       type: "poem"
     values:
       layout: "poem"
