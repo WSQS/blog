@@ -3,7 +3,7 @@ title: Design Patterns Lesson Note
 date: 2024-08-30
 ---
 
-[课程](https://www.bilibili.com/video/BV1eK4y1L71n/)的笔记
+[课程](https://www.bilibili.com/video/BV1Yr4y157Ci/)的笔记
 
 - [设计模式的原因](#设计模式的原因)
 - [面向对象设计原则](#面向对象设计原则)
