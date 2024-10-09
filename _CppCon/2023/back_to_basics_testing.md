@@ -1,6 +1,7 @@
 ---
 title: "Back to Basics: Testing by Phil Nash"
 date: 2024-10-08
+layout: "poem"
 ---
 
 testing = operation + input values + expected output values
