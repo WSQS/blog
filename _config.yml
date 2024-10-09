@@ -13,3 +13,8 @@ defaults:
       type: "poem"
     values:
       layout: "poem"
+  - scope:
+      path: ""
+      type: "CppCon"
+    values:
+      layout: "poem"
