@@ -1,6 +1,6 @@
 - name: Home
   link: /
-- name: Poems
+- name: poems
   link: /poems.html
-- name: Poems
+- name: collections
   link: /collections.html
