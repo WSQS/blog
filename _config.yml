@@ -4,6 +4,8 @@ permalink: /:categories/:year/:month/:day/:title:output_ext
 collections:
   poem:
     output: true
+  CppCon:
+    output: true
 
 defaults:
   - scope:
