@@ -1,0 +1,18 @@
+---
+layout: default
+title: Collections List
+---
+<h1>Collections List</h1>
+
+<ul>
+    {% for collection in site.collections %}
+    <h2>{{ collection.label | capitalize }}</h2>
+    <ul>
+        {% for item in site[collection.label] %}
+        <li>
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</ul>
