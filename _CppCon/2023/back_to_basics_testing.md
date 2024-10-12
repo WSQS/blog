@@ -85,6 +85,6 @@ Have a single "logical" assert
 
 Design Principles: SOLID
 
-See CppCon2020: Breaking Dependencies: The SOLID Principles, also The design of Everyday things.[note-md](../2020/breaking_dependencies_the_solid_principles.md)[note-html](../2020/breaking_dependencies_the_solid_principles.html)
+See CppCon2020: Breaking Dependencies: The SOLID Principles, also The design of Everyday things.[note-md](../2020/breaking_dependencies_the_solid_principles.md) [note-html](../2020/breaking_dependencies_the_solid_principles.html)
 
 ref:[levelofindrection.com/refs/testing.html](https://levelofindirection.com/refs/testing.html)

@@ -1,6 +1,7 @@
 ---
 title: Breaking Dependencies - The SOLID Principles by Klaus Iglberger
 date: 2024-10-10
+url: https://www.bilibili.com/video/BV1YA411J7Pe?p=11
 ---
 
 blaze C++ math library
@@ -47,6 +48,8 @@ Open for extension, but closed for modification.
 ref: CppCon2017 Free Your Functions
 
 contradiction between srp and ocp.
+
+这里作者比较了多种方法对OCP和SRP的支持，需要每个都研究一下。
 
 ref: Embrace No-Paradigm Programming
 
