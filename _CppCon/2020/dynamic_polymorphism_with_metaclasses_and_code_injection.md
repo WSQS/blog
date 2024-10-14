@@ -6,7 +6,7 @@ url: https://www.bilibili.com/video/BV1YA411J7Pe?p=38
 
 Polymorphism:The provision of a single interface to entities of different types.
 
-ref: Runtime Polymorphism: Back to Basics
+ref: Runtime Polymorphism: Back to Basics[markdown](../2017/runtime_polymorphism_back_to_basics.md) [html](../2017/runtime_polymorphism_back_to_basics.html)
 
 ref: Inheritance is the base class of evil
 
