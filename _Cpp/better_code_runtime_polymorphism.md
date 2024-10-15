@@ -48,4 +48,3 @@ guidelines: Do your own memory management - don't create garbage for your client
 
 sink argument
 
-
