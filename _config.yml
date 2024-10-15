@@ -6,6 +6,8 @@ collections:
     output: true
   CppCon:
     output: true
+  Cpp:
+    output: true
 
 defaults:
   - scope:
@@ -16,5 +18,10 @@ defaults:
   - scope:
       path: ""
       type: "CppCon"
+    values:
+      layout: "poem"
+  - scope:
+      path: ""
+      type: "Cpp"
     values:
       layout: "poem"
