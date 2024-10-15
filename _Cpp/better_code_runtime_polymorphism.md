@@ -45,3 +45,7 @@ guidelines: let the compiler do the work where appropriate
 guidelines: write classes that behave like regular object to increase reuse.
 
 guidelines: Do your own memory management - don't create garbage for your client to clean-up.
+
+sink argument
+
+
