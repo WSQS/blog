@@ -19,7 +19,7 @@ Inheritance is a mechanism to implement runtime-polymorphism where one class is 
   - Reuse increases your productivity
   - Writing unit tests is simplified
 
-make_shared<> is better than new, but the shared structure break ability to reason locally about the code(A shared pointer is as good as global variable).
+`make_shared<>` is better than new, but the shared structure break ability to reason locally about the code(A shared pointer is as good as global variable).
 
 - problem: Changed semantics of copy, assignment, and equality
   - leads to incidental data-structures
@@ -47,4 +47,10 @@ guidelines: write classes that behave like regular object to increase reuse.
 guidelines: Do your own memory management - don't create garbage for your client to clean-up.
 
 sink argument
+
+guidelines: Polymorphism is an implementation detail.
+
+ref:http://sean-parent.stlab.cc/papers-adn-presentations
+
+ref: Elements of Programming
 
