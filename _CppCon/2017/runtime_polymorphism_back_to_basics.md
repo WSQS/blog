@@ -1,5 +1,5 @@
 ---
-title: Runtime Polymorphism: Back to Basics by Louis Dionne
+title: "Runtime Polymorphism: Back to Basics by Louis Dionne"
 date: 2024-10-14
 url: https://www.bilibili.com/video/BV1Vx411V7Rd?p=137
 ---
