@@ -4,9 +4,7 @@ permalink: /:categories/:year/:month/:day/:title:output_ext
 collections:
   poem:
     output: true
-  CppCon:
-    output: true
-  Cpp:
+  code:
     output: true
 
 defaults:
@@ -17,11 +15,6 @@ defaults:
       layout: "poem"
   - scope:
       path: ""
-      type: "CppCon"
-    values:
-      layout: "poem"
-  - scope:
-      path: ""
-      type: "Cpp"
+      type: "code"
     values:
       layout: "poem"
