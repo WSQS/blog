@@ -1,6 +1,7 @@
 ---
 title: A Journey into Non Virtual Polymorphism Rud Merriam
 date: 2024-10-17
+url:  https://www.bilibili.com/video/BV1BC4y1R7iL?p=40
 ---
 
 Polymorphism(geek): many forms
