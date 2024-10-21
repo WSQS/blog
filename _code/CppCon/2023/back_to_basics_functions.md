@@ -49,9 +49,9 @@ std::span can both hold the pointer and the length.
 
 ref: Back to Basics: Lambfas from scratch in cppcon 2019
 
-ref: Back to Basics: Lambdas
+ref: Back to Basics: Lambdas in cppcon 2021
 
-ref: C++ Lambda Idioms
+ref: C++ Lambda Idioms in cppcon 2022
 
 `std::function`
 
