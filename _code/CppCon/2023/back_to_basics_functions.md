@@ -51,7 +51,7 @@ ref: Back to Basics: Lambfas from scratch in cppcon 2019
 
 ref: Back to Basics: Lambdas in cppcon 2021
 
-ref: C++ Lambda Idioms in cppcon 2022
+ref: C++ Lambda Idioms in cppcon 2022 [markdown](../2022/c++_lambda_idioms.md)  [html](../2022/c++_lambda_idioms.html)
 
 `std::function`
 
