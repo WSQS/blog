@@ -46,7 +46,7 @@ Since C++17 std::invoke() can do the same thing.
 
 ## Call-once Lambda
 
-red: what you can learn from being too cute - Daisy Hollman.
+red: what you can learn from being too cute - Daisy Hollman.[markdown](../../cpp/what_you_can_learn_from_being_too_cute_part_1.md) [html](../../cpp/what_you_can_learn_from_being_too_cute_part_1.html)
 
 Immediately invoke a lambda expression with a return value and assign it to a static variable.
 
