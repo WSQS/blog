@@ -54,7 +54,7 @@ it's more efficient than std::call_one.
 
 C++14 include generic lambdas. The call operator of lambda is a template. But the Unary plus trick cann't work.
 
-Generic lambda support perfect forwardding`auto &&`. Generic lambda also support`auto&&...args`.This also support to pass a lambda function into a lambda function.
+Generic lambda support perfect forwardding`auto &&`. Generic lambda also support`auto&&...args`. This also support to pass a lambda function into a lambda function.
 
 ## Variable Template Lambda
 
@@ -69,7 +69,7 @@ constexpr auto c_cast = [](auto x){return (T)x;}
 
 ## Init capture optimisation
 
-ref: Filipec: *C++ Lambda Story*
+ref: Filipec: *C++ Lambda Story*(book)
 
 Init capture: Init a new variable inside the capture.
 

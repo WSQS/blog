@@ -35,7 +35,7 @@ C++20 include Modules.
 
 ref: back to bask: object-oriented programming in cppcon 2019&2021
 
-ref: object-oriented programming in c++ in cppcon 2023
+ref: back to basics: object-oriented programming in c++ in cppcon 2022
 
 ref: Shah's youtube video.
 
