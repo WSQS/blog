@@ -13,4 +13,12 @@ data+operation
 
 Single Responsibility: Every class takes care of its own business
 
+- public
+- protected
+- private
 
+data members: should be private and need to initialized for primitive types.
+
+member functions is not part of the object size
+
+a function defined in class is inline.
