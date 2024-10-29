@@ -46,3 +46,25 @@ Array of Structs vs Structs of Arrays
 Efficient
 
 ref: Inheritance is the base class of Evil by Sean Parent
+
+State Pattern: delay the inheritance to property
+
+Strategy Pattern
+
+- Issues with Inheritance
+  - Changing type in run time
+  - Inflation in dervied classes
+  - Forces the user to be in the details of our internal design
+
+- User should work with a universal type - same type represent all
+  - keep your inheritance for internal state/strategy
+- Perfect to have stateless abstract classes
+- If a base class does manage date, keep it very-small and specific
+
+Polymorphism vs. Templates
+
+Substitutes for Inheritance
+
+- Avoiding inheritance: using templates, composition, lambdas or just simple "duck type" with generic algorithms
+- Inheritance of smaller things
+- Hiding your inheritance with a facade/Proxy of a one clear type.
