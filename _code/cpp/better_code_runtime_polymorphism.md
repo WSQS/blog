@@ -50,7 +50,6 @@ sink argument
 
 guidelines: Polymorphism is an implementation detail.
 
-ref:http://sean-parent.stlab.cc/papers-adn-presentations
+ref: [website](http://sean-parent.stlab.cc/papers-adn-presentations)
 
 ref: Elements of Programming
-
