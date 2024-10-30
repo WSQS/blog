@@ -71,4 +71,6 @@ Creating an object wrapper using a lambda.
 
 ## Composable Functions
 
-
+- Filter: take a list of item of one and eliminate to create a list of the same number or fewer items of the same type. `std::copy_if`
+- Map: Take a list of items of one type and create a list of the same size with all items converted to a new type. `std::transform`
+- Reduce: Take a list of items and create a single value.`std::accumulate` `std::reduce`
