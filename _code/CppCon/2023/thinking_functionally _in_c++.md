@@ -74,3 +74,46 @@ Creating an object wrapper using a lambda.
 - Filter: take a list of item of one and eliminate to create a list of the same number or fewer items of the same type. `std::copy_if`
 - Map: Take a list of items of one type and create a list of the same size with all items converted to a new type. `std::transform`
 - Reduce: Take a list of items and create a single value.`std::accumulate` `std::reduce`
+
+std::ranges
+
+## Lazy Evaluation
+
+Delay actions or calculations until they are needed
+
+Allocation
+
+Fetch data lazily
+
+Efficient Iteration
+
+## Your Mileage may vary
+
+`std::remove_if`
+
+Calculations need unchanging data:
+
+- If the contained type is cheap to copy, copy it
+- Guarantee that the data won't change, which requires some type of synchronization
+- Create data structure that can create copies lazily or log changes: bitmapped vector trie
+
+## Thinking Functionally
+
+- Leverage that C++ is a multiparadigm language.
+- Separate code into Actions, Calculations and Data
+- Isolate Actions
+- Reuse Calculations
+- Treat functions as Data
+- Functions can work together
+- Be lazy
+- Don't be too smart
+
+> Debugging is twice as hard as writing the code in the first place. Therefore if you write code as cleverly as possible, you are, by definition, not smart enough to debug it.
+
+ref: Grokking Simplicity by Eric Normand(book)
+
+ref: Functional Programming in C++(book)
+
+ref: Ranges for the Standard Library by Eric Niebler
+
+ref: C++ Weekly - EP 126 - Lambdas with Destructors
