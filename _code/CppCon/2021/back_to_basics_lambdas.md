@@ -19,3 +19,13 @@ std::find_if
 Lambda: function object defined on the fly.
 
 Combining Lambdas with standard algorithms.
+
+auto can used in lambdas.
+
+lambdas without captures is equal to function pointer and can be used as sorting criterion and hash function.
+
+Lambdas are more than functions: it's local and it can be defined at run time.
+
+Lambdas has two parameters: capture behavior parameter and call parameter.
+
+the type of lambdas need to be auto.
