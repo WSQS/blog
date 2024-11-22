@@ -49,7 +49,7 @@ std::span can both hold the pointer and the length.
 
 ref: Back to Basics: Lambdas from scratch in cppcon 2019
 
-ref: Back to Basics: Lambdas in cppcon 2021
+ref: Back to Basics: Lambdas in cppcon 2021 [markdown](../2021/back_to_basics_lambdas.md) [html]([markdown](../2021/back_to_basics_lambdas.html))
 
 ref: C++ Lambda Idioms in cppcon 2022 [markdown](../2022/c++_lambda_idioms.md)  [html](../2022/c++_lambda_idioms.html)
 
