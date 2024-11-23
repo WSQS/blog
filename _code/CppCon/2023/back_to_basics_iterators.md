@@ -75,5 +75,3 @@ ref:std::ranges::subrange and std::views::filter
 view cache the begin
 
 modification of the element a filter_view::iterator denotes is permitted, but results in undefined behavior if the resulting value does not satisfy the filter predicate.
-
-
