@@ -1,5 +1,5 @@
 ---
-title: Back to Basics: Lambdas by Nicolai Josuttis
+title: "Back to Basics: Lambdas by Nicolai Josuttis"
 date: 2024-11-21
 url: https://www.bilibili.com/video/BV1ha411k7pa?p=138
 ---
@@ -35,3 +35,5 @@ the type of lambdas need to be auto.
 the auto in lambda make the `operator()` a function template. But lambda self is still a function object which can be pass to a function. But a function template it self can't.
 
 lambda capture with value is stateless, lambda capture with reference and mutable is stateful.
+
+Note: the value and the reference of the lambda is different.
