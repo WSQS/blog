@@ -35,4 +35,3 @@ Applicative
 ref: Functional Programming: Functors and Mondas CppCon2015
 
 ref: Monoids, Monads and Applicative Functors: Repeated Software Patterns C++Now 2015 && CppCon 2020
-
