@@ -42,3 +42,11 @@ direct-initialization is in parentheses.
 C++ strives to treat user-defined types and built-in type uniformly.
 
 direct-initialization can call copy constructor, but it's not copy-initialization.
+
+Distinguish between initialization and assignment.
+
+Assignment is the only way to call operator= member function.
+
+Explicit
+
+TODO:Not finished
