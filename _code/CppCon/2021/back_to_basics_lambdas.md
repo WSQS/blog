@@ -2,6 +2,8 @@
 title: "Back to Basics: Lambdas by Nicolai Josuttis"
 date: 2024-11-21
 url: https://www.bilibili.com/video/BV1ha411k7pa?p=138
+tags:
+  - Cpp
 ---
 
 TODO: read some book of him.

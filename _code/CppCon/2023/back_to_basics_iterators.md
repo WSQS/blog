@@ -2,6 +2,8 @@
 title: "Back To Basics: Iterators by Nicolai Josuttis"
 date: 2024-11-22
 url: https://www.bilibili.com/video/BV1BC4y1R7iL?p=30
+tags:
+  - Cpp
 ---
 
 other talk from this reporter: [markdown](../2021/back_to_basics_lambdas.md)

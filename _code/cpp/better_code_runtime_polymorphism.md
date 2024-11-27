@@ -2,6 +2,8 @@
 title: "Better Code: Runtime Polymorphism - Sean Parent"
 date: 2024-10-15
 url: https://www.youtube.com/watch?v=QGcVXgEVMJg
+tags:
+  - Cpp
 ---
 
 - Better Code

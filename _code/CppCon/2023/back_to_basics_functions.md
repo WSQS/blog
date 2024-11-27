@@ -2,6 +2,8 @@
 title: "Back to Basics: Functions in C++ by Mike Shah"
 date: 2024-10-20
 url: https://www.bilibili.com/video/BV1BC4y1R7iL?p=15
+tags:
+  - Cpp
 ---
 
 ref:[web](http://mshah.io/)

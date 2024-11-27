@@ -2,6 +2,8 @@
 title: Breaking Dependencies - The SOLID Principles by Klaus Iglberger
 date: 2024-10-10
 url: https://www.bilibili.com/video/BV1YA411J7Pe?p=11
+tags:
+  - Cpp
 ---
 
 blaze C++ math library

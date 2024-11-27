@@ -2,6 +2,8 @@
 title: What you can learn from being too cute By Daisy Hollman
 date: 2024-10-23
 url: https://www.youtube.com/watch?v=2YKj2l3PlCI
+tags:
+  - Cpp
 ---
 
 meeting cpp

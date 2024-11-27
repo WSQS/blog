@@ -2,6 +2,9 @@
 title: How and When to write a C++ Template by Roth Michaels
 date: 2024-11-26
 url: https://www.bilibili.com/video/BV1opSnYHEd4/
+tags:
+  - Cpp
+  - Template
 ---
 
 Templates: recipes for generating specializations.

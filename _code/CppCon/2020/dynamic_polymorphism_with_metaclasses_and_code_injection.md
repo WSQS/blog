@@ -2,6 +2,8 @@
 title: Dynamic Polymorphism with Metaclasses and Code Injection By Brand
 date: 2024-10-12
 url: https://www.bilibili.com/video/BV1YA411J7Pe?p=38
+tags:
+  - Cpp
 ---
 
 Polymorphism:The provision of a single interface to entities of different types.

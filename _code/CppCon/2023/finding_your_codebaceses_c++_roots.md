@@ -2,6 +2,8 @@
 title: Finding Your Codebases C++ Roots by Katherine Rocha
 date: 2024-10-19
 url: https://www.bilibili.com/video/BV1BC4y1R7iL?p=13
+tags:
+  - Cpp
 ---
 
 Taking genealogy and apply if for C++.
