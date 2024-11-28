@@ -2,6 +2,8 @@
 title: "Back to Basics: Initialization by Ben Saks"
 date: 2024-11-24
 url: https://www.bilibili.com/video/BV1BC4y1R7iL?p=42
+tags:
+  - Cpp
 ---
 
 Initialization in C++ can be quite complex
