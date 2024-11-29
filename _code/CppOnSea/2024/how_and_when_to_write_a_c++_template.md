@@ -55,4 +55,20 @@ Template template parameters
 
 the necessary of `typename`.
 
-For Specialize functions, try to use overloads. Overloads is before specialization.
+For Specialize functions, try to use overloads. Overloads is before specialization. But It can work in one interface.
+
+For SFINAE(Substitution Failure Is Not An Error), use concepts instead.
+
+SFINAE `std::void_t<decltype()>`
+
+template and alternatives: template, variants, virtual interfaces
+
+template can work with lambdas, also can use std::function
+
+ref:std::forward
+
+ref:std::any_of
+
+Can put template in two header file, with and without definition.
+
+using [cppinsights](https://cppinsights.io) to learn template and lambda.
