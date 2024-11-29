@@ -35,3 +35,24 @@ class is equal to typename.
 auto
 
 alias templates: using.
+
+ref:modern Template Metaprogramming
+
+variable templates
+
+Default template parameters
+
+Variadic templates
+
+```cpp
+template <class... Types>
+class variant;
+```
+
+NTTP: None type template parameter
+
+Template template parameters
+
+the necessary of `typename`.
+
+For Specialize functions, try to use overloads. Overloads is before specialization.
