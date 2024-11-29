@@ -18,7 +18,7 @@ Types of templates
 - lambda templates(C++20)
 - Concepts(C++20)
 
-ref:Templates made easy with C++20 by Roth Michaels in CppOnSea 2023
+ref:Templates made easy with C++20 by Roth Michaels in CppOnSea 2023 [markdown](../2023/templates_made_easy_with_c++20.md) [html](../2023/templates_made_easy_with_c++20.html)
 
 Reason: don't repeat yourself.
 
