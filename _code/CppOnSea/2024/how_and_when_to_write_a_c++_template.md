@@ -36,7 +36,7 @@ auto
 
 alias templates: using.
 
-ref:modern Template Metaprogramming
+ref:modern Template Metaprogramming By Walter Brown in cppcon 2014
 
 variable templates
 
