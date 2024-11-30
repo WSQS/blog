@@ -38,6 +38,10 @@ alias templates: using.
 
 ref:modern Template Metaprogramming By Walter Brown in cppcon 2014
 
+[markdown](../../CppCon/2014/modern_template_metaprogramming_A_compendium_part_i.md) [html](../../CppCon/2014/modern_template_metaprogramming_A_compendium_part_i.html)
+
+[markdown](../../CppCon/2014/modern_template_metaprogramming_A_compendium_part_ii.md) [html](../../CppCon/2014/modern_template_metaprogramming_A_compendium_part_ii.html)
+
 variable templates
 
 Default template parameters
