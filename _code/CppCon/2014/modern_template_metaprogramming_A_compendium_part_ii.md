@@ -6,3 +6,9 @@ tags:
   - Cpp
   - Template
 ---
+
+pre part:[markdown](./modern_template_metaprogramming_A_compendium_part_i.md) [html](./modern_template_metaprogramming_A_compendium_part_i.html)
+
+## Using inheritance + specialization together
+
+
