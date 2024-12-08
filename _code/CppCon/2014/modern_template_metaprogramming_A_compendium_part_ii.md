@@ -39,3 +39,32 @@ struct is_one_of<T>:false_type{};
 template<class T, class... P0toN>
 struct is_one_of<class T,class P0,P1toN...>:is_one_of<T,P1toN...>{};
 ```
+
+## Unevaluated operands
+
+`sizeof`,`typeid`,`decltype`,`noexcept`never evaluated, not even at compile time.
+
+- Implies that no code is generated(in these contexts) for such operand expression(no run time cost)
+- Only a declaration, not a definition to use a function's or object's name in these contexts.
+
+An unevaluated function call can usefully map a type to another
+
+```cpp
+decltype(foo(std::declval<T>()))
+```
+
+This just like `std::result_of()`.
+
+- the unevaluated call `std::declval<T>()`is declared to give a rvalue result of type T(`std::declval<T&>()` gives lvalue)
+
+## Proposed new type trait void_t
+
+```cpp
+template<class ...>
+using void_t = void;
+```
+
+- Acts as a metafunction call that maps any well-formed types into the predictable type void
+  - Initially an implementation detail while proposing SFINAE-friendly version of common-type and iterator_traits
+
+default argument is essential.
