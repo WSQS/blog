@@ -3,6 +3,7 @@ title: "Lecture 02: Review of Linear Algebra"
 date: 2024-12-09
 url: https://www.bilibili.com/video/BV1X7411F744?p=2
 tags:
+  - computer_graphics
 ---
 
 ref:Fundamental of Computer Graphics Chapter 2 and Chapter 5
@@ -43,3 +44,7 @@ Unit Vector
 矩阵和向量相乘$M\times V$是对向量进行变换。
 
 单位矩阵和逆矩阵
+
+向量点乘和叉乘都可以写成矩阵操作。
+
+齐次坐标。

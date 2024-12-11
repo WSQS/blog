@@ -3,6 +3,7 @@ title: "Lecture 01: Overview of Computer Graphics"
 date: 2024-12-09
 url: https://www.bilibili.com/video/BV1X7411F744/
 tags:
+  - computer_graphics
 ---
 
 ## What is Computer Graphics
