@@ -6,6 +6,8 @@ tags:
   - computer_graphics
 ---
 
+ref:Fundamental of Computer Graphics Chapter 6
+
 ## Why study transformation
 
 Modelling：模型变换
