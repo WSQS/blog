@@ -1,6 +1,7 @@
 ---
 title: "lecture 04: Transformation Cont."
 date: 2024-12-11
+url: https://www.bilibili.com/video/BV1X7411F744?p=4
 tags:
   - computer_graphics
 ---
