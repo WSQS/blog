@@ -32,6 +32,8 @@ Shading：着色。引入明暗与颜色。
 
 对不同物体应用不同材质。
 
+### Illumination & Shading
+
 A Simple Shading Model: Blinn-Phong Reflectance Model
 
 - 高光
@@ -50,4 +52,4 @@ Diffuse Reflection：漫反射 Lambert强度$\cos{\theta}$
 
 光强是平方反比衰减。
 
-### Illumination & Shading
+综上，漫反射强度可以定义为$L_d = k_d(I/r^2)\max(0,n \cdot l)$
