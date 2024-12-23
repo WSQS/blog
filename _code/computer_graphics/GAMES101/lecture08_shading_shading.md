@@ -1,6 +1,7 @@
 ---
-title: lecture08: Shading Shading
+title: "lecture 08: Shading Shading"
 date: 2024-12-20
+url: https://www.bilibili.com/video/BV1X7411F744?p=8
 tags:
   - computer_graphics
 ---
