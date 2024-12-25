@@ -1,5 +1,5 @@
 ---
-title: "lecture 19: Geometry Introduction"
+title: "lecture 11: Geometry Curves"
 date: 2024-12-25
 url: https://www.bilibili.com/video/BV1X7411F744?p=11
 tags:
