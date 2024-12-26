@@ -53,3 +53,21 @@ $r(t)=o+td$
 Moller Trumbore Algorithm
 
 光线+重心坐标系
+
+$o+td=(1-b_1-b_2)P_0+b_1P_1+b_2+P_2$解出t、b1、b2。存在解析解。
+
+判断解合理。
+
+## Accelerating Ray-Surface Intersection
+
+Bounding Volumes
+
+包围盒，光线碰不到包围盒，那么就更看不到物体。
+
+长方体是三组对面的交集。通常用到的包围盒是Axis-Aligned Bounding Box(AABB)轴对齐包围盒
+
+光线和包围盒求交。
+
+对任何一个对面，都能够求出光线进去和出来的时间。求三个线段的交集。因为只有三条线都进入时，才算进入，只要有一个退出就都退出。只要交集不为空，那么光线就与盒子存在交点。
+
+平面和轴平行求交点更快。
