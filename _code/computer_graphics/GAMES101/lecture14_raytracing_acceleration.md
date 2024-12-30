@@ -30,8 +30,31 @@ RTXGI：实时全局光照技术
 
 空间划分。
 
-Oct-Tree:八叉树
+Oct-Tree:八叉树、依赖维度
 
 KD-Tree:只砍一刀
 
-BSP-Tree
+BSP-Tree:不是横平竖直的砍
+
+KD-Tree：会形成树，只需要在叶子节点存储对象。
+
+问题：
+
+- 难以判断三角形是否和包围盒存在交集。
+- 一个物体可能在多个叶子节点当中。
+
+### Object Partitions & Bounding Volume Hierarchy
+
+划分物体而非空间。
+
+减少重叠。
+
+- 选择一个维度去进行划分
+- 总是选择节点的最长轴
+- 取中间的那个节点来进行划分($O(n)$复杂度，快速选择算法)
+
+## Basic radiometry
+
+辐射度量学
+
+精准的光学物理量。
