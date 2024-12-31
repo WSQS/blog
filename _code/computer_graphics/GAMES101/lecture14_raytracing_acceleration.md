@@ -57,4 +57,12 @@ KD-Tree：会形成树，只需要在叶子节点存储对象。
 
 辐射度量学
 
-精准的光学物理量。
+- 精准的光学物理量。准确测量光在空间中的属性
+- Radiant flux:电磁辐射能量(J)和通量(W,lm 流明)
+- Intensity:单个立体角上的功率(cd)
+- Irradiance:接收到的强度
+- Radiance:传播中的强度
+
+- Why
+- What
+- How
