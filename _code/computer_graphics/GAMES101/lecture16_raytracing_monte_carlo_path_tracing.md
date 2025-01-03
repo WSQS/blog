@@ -63,3 +63,35 @@ $$L_O(p,w_O)=\int_{\Omega +} L_i(p,w_i)f_r(p,w_i,w_o)(n\cdot w_i)dw_i$$
 $$L_O(p,w_O)=\frac{1}{N}\sum^N_{i=1}\frac{L_i(p,w_i)f_r(p,w_i,w_o)(n\cdot w_i)}{p(w_i)}$$
 
 注意，这里的i有两种含义。
+
+引入间接光照，对于非光源的情况，再求一次该点的直接光照。
+
+问题：
+
+- 光线数量指数级递增:N=1时就不会爆炸，这时就是路径追踪。可以通过对足够多的路径进行平均来解决噪声的问题。
+- 递归的求解，算法无法停止: 俄罗斯轮盘赌(Russian Roulette, RR)，一定概率停止向下追踪，并将得到的值除以概率P，这样的平均的期望值还是原本的值。
+
+并不高效，优化：让蒙特卡洛算法尽量在光源上进行采样，需要把渲染方程写成在光源上的积分，也就是将$dA$映射到$dw$。
+
+$$L_O(p,w_O)=\int_{A} L_i(p,w_i)f_r(p,w_i,w_o)(n\cdot w_i)\frac{\cos\theta\cos\theta'}{\left| \left| x'-x \right| \right|^2}$$
+
+可以将一个点受到的光分成直接光照和间接光照，前者不需要用俄罗斯轮盘赌进行求解。
+
+问题：光源可能被遮挡解决：需要进行遮挡检查。
+
+路径追踪几乎与现实一模一样。照片级真实感。
+
+光线追踪如今是一个十分宽泛的概念。
+
+ref:[pbrt, Version 4 (Early Release)](https://github.com/mmp/pbrt-v4)
+
+一些遗留的问题：
+
+- 如何对一个半球面进行均匀采样，以及如何对任意函数进行采样
+- PDF的最佳选择：重要性采样理论
+- 随机数的选择：low discrepancy sequences
+- 对半球采样和光源采样进行结合: multiple imp. sampling
+- 像素加权算法:pixel reconstruction filter
+- 计算得到的radiance并不是颜色，还需要进行gamma矫正，曲线，颜色空间。
+
+> Fear the science, my friends.
