@@ -6,6 +6,18 @@
     <title>{{ page.title }}</title>
     <!-- <link rel="stylesheet" href="/css/style.css"> -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], // 行内公式定界符
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], // 独立公式定界符
+                processEscapes: true, // 允许使用 \ 转义字符
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'], // 跳过这些标签
+            }
+        };
+    </script>
 </head>
 
 <body>
