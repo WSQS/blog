@@ -1,5 +1,5 @@
 ---
-title: "lecture 14: Ray Tracing Light Transport"
+title: "lecture 15: Ray Tracing Light Transport"
 date: 2025-01-02
 url: https://www.bilibili.com/video/BV1X7411F744?p=15
 tags:
