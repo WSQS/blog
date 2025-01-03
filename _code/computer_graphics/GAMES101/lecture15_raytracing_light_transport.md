@@ -50,7 +50,7 @@ $l(u)=e(u)+\int l(V)K(u,v)dV$
 ## Probability Review
 
 - 随机变量:X
-- 分布:$X~p(x)$
+- 分布:$X\sim p(x)$
 - 概率
 - 期望
 - 概率密度函数(Probability Distribution Function, PDF)
