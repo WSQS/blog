@@ -74,3 +74,12 @@ $D(h)$是法线分布
 - Non-negative
 - Linearity:可以将结果相加
 - Reciprocity principle:可逆性
+- Energy conservation: 能量不会增加
+
+## Measuring BRDFs
+
+测量仪器:Gonioreflectometer
+
+各向同性可以减少一个维度。
+
+ref:MERL BRDF Database: 测量很多材质的BRDF
