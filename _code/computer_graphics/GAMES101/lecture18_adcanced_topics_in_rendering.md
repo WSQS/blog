@@ -70,15 +70,55 @@ consistent： 一致的，有偏，但是在极限情况下是有偏的。
 
 ### Non-surface models
 
+非表面模型
+
 #### Participating media
+
+散射介质。特点在于散射光线是如何分布的。
+
+随机选择方向弹射，随机选择方向前进。
+
+手指其实也是散射介质。
 
 #### Hair/ fur/ fiber(BCSDF)
 
+头发。
+
+高光:无色的高光和有色的高光。
+
+Kajiya-Kay Model
+
+Marschner Model:R,TT,TRT，将头发建模为类似玻璃的圆柱。
+
+多次散射。
+
+毛发
+
+- Cuticle
+- Medulla
+- Cortex(动物拥有的更多)
+
+闫令琪发明
+
+Double Cylinder Model
+
+R、TT、TRT、TTs、TRTs
+
 #### Granular material
+
+颗粒状材质
+
+简化
 
 ### Surface models
 
 #### Translucent material(BSSRDF)
+
+半透明材质
+
+玉石、水母
+
+次表面散射，要考虑从各个方向进到其他点的光。
 
 #### Cloth
 
