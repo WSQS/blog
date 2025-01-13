@@ -55,3 +55,17 @@ normal distribution (sometimes called a Gaussian distribution, after mathematici
 bell curve
 
 `randomGaussian()`function takes care of the math and returns random numbers with a normal distribution
+
+### A Custom Distribution of Random Numbers
+
+Lévy flight.
+
+根据生成的随机数再去生成一个随机数。
+
+accept-reject algorithm
+
+It‘s one of Monte Carlo methods.
+
+### A Smoother Approach with Perlin Noise
+
+`noise()` function.
