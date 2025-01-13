@@ -56,4 +56,6 @@ Particle Systems
 
 用粒子描述物体。
 
+需要很多粒子，需要一个加速结构找到最近邻粒子。
+
 ## Rigging
