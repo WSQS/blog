@@ -83,7 +83,7 @@ $$L_O(p,w_O)=\int_{A} L_i(p,w_i)f_r(p,w_i,w_o)(n\cdot w_i)\frac{\cos\theta\cos\t
 
 光线追踪如今是一个十分宽泛的概念。
 
-ref:[pbrt, Version 4 (Early Release)](https://github.com/mmp/pbrt-v4)
+ref:[Physically Based Rendering book](https://www.pbr-book.org)
 
 一些遗留的问题：
 
