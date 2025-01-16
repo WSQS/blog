@@ -56,7 +56,7 @@ Particle Systems
 
 需要很多粒子，需要一个加速结构找到最近邻粒子。
 
-ref: Teaching myself C so I can build a particle simulation
+re:[Teaching myself C so I can build a particle simulation](https://www.youtube.com/watch?v=NorXFOobehY)
 
 - 吸引力、排斥力
 - 阻力

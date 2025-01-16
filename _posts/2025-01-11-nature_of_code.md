@@ -68,4 +68,16 @@ It‘s one of Monte Carlo methods.
 
 ### A Smoother Approach with Perlin Noise
 
-`noise()` function.
+`noise()`function.
+
+ref:[Ken Perlin’s website](https://mrl.cs.nyu.edu/~perlin/doc/oscar.html)
+
+`map()`function.
+
+`noiseDetail()`function.
+
+## Vectors
+
+Vector: defined as an entity that has both magnitude and direction.
+
+Vector rather than float is better for doing same thing in short.
