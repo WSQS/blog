@@ -1,0 +1,7 @@
+---
+title: "Back to Basics: Almost Always Vector by Kevin Carpenter"
+date: 2025-01-22
+url: https://www.bilibili.com/video/BV14YyfYhE3C?p=14
+tags:
+  - Cpp
+---
