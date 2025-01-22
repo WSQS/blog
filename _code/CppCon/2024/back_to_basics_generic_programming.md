@@ -4,6 +4,7 @@ date: 2025-01-20
 url: https://www.bilibili.com/video/BV14YyfYhE3C?p=10
 tags:
   - Cpp
+  - Template
 ---
 
 ## Generic Programming
