@@ -44,7 +44,7 @@ heap is flexible large lifetime sharing
 
 reserve to prevent allocations, reverse is shrink_to_fit
 
-ref: Getting Allocators out of Our Way in CppCon 2019
+ref: [Getting Allocators out of Our Way in CppCon 2019](https://youtu.be/Fv8oj8EdssY?si=QRmDCTDYGeWBQtFZ)
 
 ## Iterator
 
@@ -58,7 +58,7 @@ range based for loop do copy.
 
 invalidating iterators
 
-ref: C++ STL Write an iterator from scratch
+ref: C++ STL Write an iterator from scratch On Youtube
 
 ## Algorithms
 
