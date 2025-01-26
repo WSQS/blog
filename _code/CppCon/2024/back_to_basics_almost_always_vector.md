@@ -6,7 +6,7 @@ tags:
   - Cpp
 ---
 
-ref: Data Structures and Algorithms with the C++ STL by JOHN FARRIER
+re: Data Structures and Algorithms with the C++ STL by JOHN FARRIER [markdown](../../cpp/data_structures_and_algorithms_with_the_cpp_stl.md) [html](../../cpp/data_structures_and_algorithms_with_the_cpp_stl.html)
 
 ref: paper: Generic Dynamic Arrays in C++
 
