@@ -34,5 +34,55 @@ copy initialization.
 
 #### Accessing elements
 
+`operator[]`
 
+`at()`
+
+`size_t size()`
+
+`front()` `back()`
+
+#### Add and removing elements
+
+`push_back()`
+
+`insert()`
+
+`emplace()` `emplace_back()`
+
+`pop_back()`
+
+`erase()`
+
+erase-remove idiom:
+
+- `std::remove` `std::remove_if` move elements to the end.
+- erase the end of container.
+
+In c++20, `std::erase()` and `std::erase_if()` allow handle two step in one function.
+
+`capacity()`
+
+`empty()`
+
+`clear()` doesn't alter the capacity of vector.
+
+`reserve()`
+
+### Mastering Iterators with std::vector
+
+#### Types of iterators in the STL
+
+In STL, iterators connect algorithms and containers.
+
+- input iterators: impossible to move forward and modify present value.
+- output iterators: `std::back_inserter`
+- forward iterators: combine input and output iterators. `std::forward_list`
+- reverse iterators: `rbegin()` `rend()` `std::reverse_iterator`
+- bidirectional iterators: `std::list`
+- random access iterators
+
+`std::generatr_n()`
+
+#### Basic iteration techniques with std::vector
 
