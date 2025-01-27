@@ -86,3 +86,34 @@ In STL, iterators connect algorithms and containers.
 
 #### Basic iteration techniques with std::vector
 
+`begin()` `end()`
+
+`cbegin()` `cend()`
+
+- process data
+- search operations
+- algorithm application
+
+#### Using std::begin and std::end
+
+`std::begin()` `std::end` works for different containers.
+
+Using non-menber function is key to crafting container-independent, reusable code.
+
+#### Creating a custom iterator
+
+- enhanced abstrction
+- data transformation
+- filtered views
+
+requirements:
+
+- type aliases
+  - value_type
+  - difference_type
+  - pointer and refrence
+  - iterator_category
+- operators
+  - operator*
+  - operator++
+  - operator== and operator!=
