@@ -120,5 +120,32 @@ requirements:
 
 ### Mastering Memory and Allocators with std::vector
 
+#### Resizing and reserving memory
 
+`resize()`
+
+shrink a vector's size doesn't reduce its capacity.
+
+`shrink_to_fit()`
+
+#### Custom allocator basics
+
+Allocator servers as an interface, abstrction the memory source for the container. It handle allocating and deallocating, construct and destruct.
+
+abstrction interface:
+
+- `allocate()`
+- `deallocate()`
+- `construct()`
+- `destroy()`
+
+`std::allocator`
+
+#### Creating a custom allocator
+
+Memory pool:
+
+- Faster allocations and deallocation
+- Reduce fragmantation
+- Predictable behavior
 
