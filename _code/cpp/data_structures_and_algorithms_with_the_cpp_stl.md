@@ -149,3 +149,7 @@ Memory pool:
 - Reduce fragmantation
 - Predictable behavior
 
+#### Allocators and container performance
+
+ref: profiler Valgrind
+
