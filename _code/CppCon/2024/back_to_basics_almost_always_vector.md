@@ -44,7 +44,7 @@ heap is flexible large lifetime sharing
 
 reserve to prevent allocations, reverse is shrink_to_fit
 
-ref: Getting Allocators out of Our Way in CppCon 2019
+re: Getting Allocators out of Our Way in CppCon 2019 [markdown](../2019/getting_allocators_out_of_our_way.md) [html](../2019/getting_allocators_out_of_our_way.html)
 
 ## Iterator
 
