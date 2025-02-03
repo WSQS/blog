@@ -153,3 +153,5 @@ Memory pool:
 
 ref: profiler Valgrind
 
+
+### Mastering Algorithms with std::vector
