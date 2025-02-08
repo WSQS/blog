@@ -37,7 +37,7 @@ Create intermediate containers
 
 `std::views::filter`
 
-`std::views::take_wile` `std::views::drop_while` keep only the first/last elements
+`std::views::take_while` `std::views::drop_while` keep only the first/last elements
 
 `std::view::reverse`
 
