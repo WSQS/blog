@@ -128,3 +128,47 @@ what if the intermediate functions can fail.
 `std::monostate`
 
 `std::optional<T>::and_then`
+
+`std::expected`
+
+`std::expected<T,E>::transform`
+
+`std::expected<T,E>::transform_error`
+
+`std::expected<T,E>::join`
+
+`std::expected<T,E>::and_then`
+
+Composing std::expected requires the same E
+
+Composing using .transform/ .and_then minimizes use of if.
+
+## Composing I/O
+
+Principle: All functions are pure
+
+- No side-effects during computation
+- Always result in the same value when called with the same input.
+
+Action
+
+Separate I/O from computation.
+
+`std::execution::schedule`
+
+`std::execution::then`
+
+`std::execution::when_all`
+
+- Declarative build plans, execute them later
+- Separate I/O from computation
+
+## Monad
+
+A monad is a type that implements the operations
+
+- .transform
+- .and_then
+- .join
+
+Monads enable composition
