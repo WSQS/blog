@@ -36,3 +36,14 @@ There is Silver Bullet in other domain
 ## Coding and Testing
 
 - Calculating Distance
+- Comparing to Zero
+- Variadic pack short-circuit evaluation
+- Explaining Code
+- Fixing Code
+  - Self Healing CI Automation
+  - ref: [Mentat](hhttps://mentat.ai/)
+  - ref: Bryce Adelstein Lelbach in CoreCpp 2023 and CppOnSea 2023 and ACCU 2024
+- Testing
+- Bigger Code Challenges
+
+ref: [Leader Board](https://evalplus.github.io/leaderboard.html)
