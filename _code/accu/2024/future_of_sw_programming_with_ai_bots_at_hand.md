@@ -47,3 +47,29 @@ There is Silver Bullet in other domain
 - Bigger Code Challenges
 
 ref: [Leader Board](https://evalplus.github.io/leaderboard.html)
+
+## Is C++ Special
+
+C++ Problem domains are usually harder, use ai in less-complicated problem.
+
+Alternative: Assembly Python Rust
+
+## Getting Prepared
+
+- Daily Work
+- Task Management
+- Code Quality
+
+ref: Coding on Copilot: 2003 Data Suggests Downward Pressure on Code Quality
+
+ref: Fast and Slow Thinking
+
+- Use AI models for tasks that makes you more productive
+- Take into account the limitation and pitfalls of generated code
+
+## Conclusions and recommendations
+
+- Never rely on anything without reviewing it. Trust nothing.
+- The skill of reading code becomes even more important than ever.
+
+ref: C++Now
