@@ -17,7 +17,7 @@ Random vector need to be uniformed.
 
 Product Random vector and the vector corner to point to get the value.
 
-Do Interpolation to get the value.
+Do Interpolation to get the value, using smoothstep function.$y(x) = 3 x ^2 - 2 x ^ 3$
 
 ## Uniform Distribution of Gradients
 
