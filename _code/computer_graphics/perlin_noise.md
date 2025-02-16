@@ -5,6 +5,7 @@ url: https://www.scratchapixel.com/lessons/procedural-generation-virtual-worlds/
 tags:
   - algorithm
   - computer_graphics
+  - perlin_noise
 ---
 
 ## Perlin Noise

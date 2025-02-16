@@ -4,9 +4,10 @@ date: 2024-12-23
 url: https://www.bilibili.com/video/BV1X7411F744?p=10
 tags:
   - computer_graphics
+  - perlin_noise
 ---
 
-## Applications if textures
+## Applications of textures
 
 纹理=内存+范围查询(过滤)
 
@@ -24,7 +25,7 @@ Perturb the normal
 
 纹理可以定义为三维的。一个三维空间中的噪声。
 
-ref:柏林噪声
+re:[柏林噪声](../perlin_noise.md)
 
 记录已经计算好的信息。
 
