@@ -20,6 +20,8 @@ Product Random vector and the vector corner to point to get the value.
 
 Do Interpolation to get the value, using smoothstep function.$y(x) = 3 x ^2 - 2 x ^ 3$
 
+Smoothstep function is a key point, without it, there will just be zero in line.
+
 ## Uniform Distribution of Gradients
 
 Using angle to generate uniformed distribution normalized vector, it's still not uniformed.
