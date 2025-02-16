@@ -42,7 +42,7 @@ There is Silver Bullet in other domain
 - Fixing Code
   - Self Healing CI Automation
   - ref: [Mentat](hhttps://mentat.ai/)
-  - ref: Bryce Adelstein Lelbach in CoreCpp 2023 and CppOnSea 2023 and ACCU 2024
+  - re: Bryce Adelstein Lelbach in CppOnSea 2023 [markdown](../../CppOnSea/2023/endnote_ai-assisted_software_engineering.md) [html](../../CppOnSea/2023/endnote_ai-assisted_software_engineering.html)
 - Testing
 - Bigger Code Challenges
 

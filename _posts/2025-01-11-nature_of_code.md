@@ -4,6 +4,7 @@ date: 2025-01-11
 url: https://natureofcode.com
 tags:
     - JavaScript
+    - perlin_noise
 ---
 
 ## Acknowledgments

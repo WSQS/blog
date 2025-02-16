@@ -4,6 +4,7 @@ date: 2025-01-06
 url: https://www.bilibili.com/video/BV1X7411F744?p=18
 tags:
   - computer_graphics
+  - perlin_noise
 ---
 
 ## Advanced Light Transport
@@ -150,6 +151,6 @@ Dipole近似
 
 三维空间噪声函数。
 
-柏林噪声。
+re:[柏林噪声](../perlin_noise.md)
 
 木头，铁锈等材质。
