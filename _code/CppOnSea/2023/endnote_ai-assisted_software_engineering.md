@@ -44,7 +44,7 @@ Reproducibility, Unit test.
 
 ## Creation
 
-ref: [podcast](https://adpthepodcast.com)
+ref: [podcast](https://adspthepodcast.com/)
 
 Implement `std::unique` in parallel
 
