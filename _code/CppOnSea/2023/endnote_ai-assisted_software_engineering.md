@@ -1,6 +1,7 @@
 ---
 title: "Endnote: AI-Assisted Software Engineering by Bryce Adelstein Lelbach"
 date: 2025-02-13
+url: https://www.bilibili.com/video/BV1saKseSEtT/
 tags:
   - Cpp
   - AI
@@ -18,6 +19,8 @@ Potential in complex ai system.
 - Creation
 - Analysis
 
+## Analysis
+
 LLM is good at Analysis.
 
 We need more information.
@@ -32,3 +35,29 @@ We want AI:
 - Collect what we need
 
 Training on your codebase does not remove the need for including code in your context.
+
+LLM are not reliable
+
+Reproducibility, Unit test.
+
+- Temperature parameter
+
+## Creation
+
+ref: [podcast](https://adpthepodcast.com)
+
+Implement `std::unique` in parallel
+
+`thrust::unique`
+
+// TODO: Parallel is hard for me.
+
+takeaway:
+
+- Using LLM for Brainstorming or Refinement
+- Work step-by-step
+- Guide the AI
+
+We judge AI Unfairly.
+
+- Success with AI models for software engineering requires skill.
