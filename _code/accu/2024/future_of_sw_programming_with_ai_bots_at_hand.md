@@ -6,6 +6,7 @@ tags:
   - Cpp
   - accu
   - Amir_Kirsh
+  - AI
 ---
 
 ref: CoreCpp
