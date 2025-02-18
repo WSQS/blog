@@ -6,4 +6,10 @@ tags:
   - algorithm
 ---
 
+Feedback
 
+Pole: Simplest feed back.
+
+Factoring for complex system to a simpler systems.
+
+It's just polynomial calculation.
