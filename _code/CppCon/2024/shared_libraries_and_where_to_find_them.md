@@ -49,6 +49,18 @@ The linker:`ld`, other implementation: ld.gold, lld, mold, gcc invoke ld via col
 
 `objdump -p`
 
+`LD_DEBUG=libs`
+
+`ldd`
+
+`-L<path>` to define where to look libraries when compile, this only define the direct dependency.
+
+`LD_LIBRARY_PATH` and `-Wl,rpath,/<path>` (when compiling) to define where to look when running.
+
+transitive dependencies
+
+RPARH and RUNPATH
+
 ## Tools to query, troubleshoot
 
 ## Where to find shared libraries
