@@ -20,7 +20,7 @@ Equal distribute probability.
 
 Blue Noise: Poisson Disk Sampling, Relative equidistant points of a given
 
-Simplex/ Perlin Noise
+[Simplex/ Perlin Noise](../../computer_graphics/perlin_noise.md)
 
 ref:RedBlobGames
 
