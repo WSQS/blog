@@ -82,3 +82,5 @@ Buffer influence Memory Model.
 ## How ROB/SQ within x86 cores influenced the x86 TSO memory model
 
 SC(Sequential Consistency) is a subset of TSO execution.
+
+TSO do not support ordering between a store and a subsequent load.
