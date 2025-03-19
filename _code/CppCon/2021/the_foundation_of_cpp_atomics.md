@@ -1,6 +1,6 @@
 ---
 title: "The Foundation of C++ Atomics: The Knowledge You Need to Correctly Use C++ Atomics by Filipe Mulonde"
-date: date
+date: 2025-03-12
 url: https://www.bilibili.com/video/BV1ha411k7pa?p=98
 tags:
   - Cpp
