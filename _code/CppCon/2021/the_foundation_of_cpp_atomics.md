@@ -84,3 +84,7 @@ Buffer influence Memory Model.
 SC(Sequential Consistency) is a subset of TSO execution.
 
 TSO do not support ordering between a store and a subsequent load.
+
+ref:A Primer on Memory Consistency and Cache Coherence
+
+// TODO:Further is about hardware skip
