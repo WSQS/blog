@@ -23,7 +23,7 @@ defaults:
     values:
       layout: single
   - scope:
-      path: "_pages"
+      path: ""
       type: pages
     values:
       layout: single
