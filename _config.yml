@@ -1,4 +1,5 @@
-theme: minima
+# theme: minima
+remote_theme: mmistakes/minimal-mistakes
 permalink: /:categories/:year/:month/:day/:title:output_ext
 
 collections:
@@ -18,3 +19,11 @@ defaults:
       type: "code"
     values:
       layout: "poem"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
