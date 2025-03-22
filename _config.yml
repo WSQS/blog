@@ -13,12 +13,12 @@ defaults:
       path: ""
       type: "poem"
     values:
-      layout: "poem"
+      layout: single
   - scope:
       path: ""
       type: "code"
     values:
-      layout: "poem"
+      layout: single
 
 plugins:
   - jekyll-paginate
