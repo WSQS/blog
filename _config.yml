@@ -13,17 +13,17 @@ collections:
 
 defaults:
   - scope:
-      path: ""
+      path: "_poem"
       type: "poem"
     values:
       layout: single
   - scope:
-      path: ""
+      path: "_code"
       type: "code"
     values:
       layout: single
   - scope:
-      path: ""
+      path: "_pages"
       type: pages
     values:
       layout: single
