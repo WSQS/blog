@@ -1,8 +1,8 @@
 ---
-title: Poems
+title: Codes
 layout: collection
-permalink: /poems/
-collection: poem
+permalink: /codes/
+collection: code
 entries_layout: grid
 classes: wide
 ---
