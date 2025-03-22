@@ -2,6 +2,9 @@
 remote_theme: mmistakes/minimal-mistakes
 permalink: /:categories/:year/:month/:day/:title:output_ext
 
+minimal_mistakes_skin: default
+search: true
+
 collections:
   poem:
     output: true
