@@ -17,6 +17,15 @@ collections:
 defaults:
   - scope:
       path: ""
+      type: posts
+    values:
+      layout: single
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  - scope:
+      path: ""
       type: "poem"
     values:
       layout: single
