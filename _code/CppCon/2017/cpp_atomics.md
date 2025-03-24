@@ -52,4 +52,38 @@ Increment and decrement for raw pointers.
 
 Compare and swap(CAS) is used in most lock free algorithms.
 
-`fetch_add`...add and return old value.
+`fetch_add`... add and return old value.
+
+`std::atomic` provides operator overloads only for atomic operations.
+
+## Speed
+
+Always measured performance
+
+Comparing atomic operation with another thread-safe alternative is valid and useful.
+
+ref: spinlock
+
+`std::atomic` isn't always lock free.
+
+`std::atomic::is_always_lock_free()` to check is the type lock free. It's runtime and platform dependent， based on alignment and padding.
+
+Two thread access 2 variable with in 64 bytes will wait as if it was the same variable.
+
+Atomic operations do wait on each other, write do, read only can scale near perfectly.
+
+Atomic operations have to wait for cache line access.
+
+Avoid false sharing by aligning per-thread data to separate cache lines.
+
+## Strong and Weak compare-and-swap
+
+c++ provides two versions of CAS
+
+`compare_exchange_strong` and `compare_exchange_weak`
+
+problem: if weak CAS correctly returns x == old+x, why would it fail?
+
+Lock is not a real mutex but some form of exclusive access implemented in hardware.
+
+Read is faster than write.
