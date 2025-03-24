@@ -86,4 +86,50 @@ problem: if weak CAS correctly returns x == old+x, why would it fail?
 
 Lock is not a real mutex but some form of exclusive access implemented in hardware.
 
-Read is faster than write.
+Double-checked locking pattern is back.
+
+## Usage
+
+Atomic variable is an index or pointer to non-atomic memory.
+
+Atomic variables as gateways to memory access.
+
+Atomic are used to exclusive access to memory or to reveal memory to other threads.
+
+## Memory Barriers
+
+Memory barriers control how changes to memory made by one cpu become visible to other CPUs.
+
+Memory barriers are closely related to memory order.
+
+`std::memory_order_relaxed`: no barriers
+
+`std::memory_order_acquire`: nothing after load can move in front of it, anything before can move after.
+
+`std::memory_order_release`: is reverse.
+
+acquire release order often used together. One thread prepare date then releases and the other acquires atomic variable.
+
+`std::memory_order_acq_rel`: combines acquire and release
+
+`std::memory_order_seq_cst`: no need for same atomic variable.
+
+CAS have two memory orders.
+
+Default memory order is `std::memory_order_seq_cst`, the strongest order. But it is expensive.
+
+Lock free code is hard to write and hard to read. clarity matters.
+
+Sequential consistency makes your program easier to understand and often has no performance penalty.
+
+Lock-based program can only memory_order_acquire and memory_order_release.
+
+## When to use std::atomic in your c++ code
+
+Data structures that are difficult or expensive to implement with lock.
+
+When drawbacks of locks are important.(deadlocks, priority conflicts, latency problems)
+
+When concurrent synchronization can be achieved by the cheapest atomic operations.
+
+ref: talks on RCU
