@@ -69,8 +69,86 @@ For trivial class it returns register. And also size limit.
 
 > If you can avoid defining default operations, do.
 
-reason: It's simplest and gives the cleanest semantics. It's knows as the rule of zero.
+Reason: It's simplest and gives the cleanest semantics. It's knows as the rule of zero.
 
 Don't use std::pair and especially `std::tuple`. Named struct is better for both readability and performance.
 
 For `std::unique_ptr`, using `[[always_inline]]` and wrapper the raw pointer.
+
+### Return Value Optimization
+
+ref: C++ reference: copy elision
+
+A prvalue(pure rvalue) will constructed directly into the storage of its final destination.
+
+ref: cppcon 2024 can you RVO?
+
+`std::optional` will turns prvalue into rvalue.
+
+It also affect `std::variant` `std::vector` `std::map`
+
+ref: Superconstructing super elider solution
+
+ref:CppNow 2024 An Adventure Modern Library
+
+ref: Meeting C++ 2023 Prog C++ Ivan Cukic
+
+solution: [lazy](https://github.com/AlCash07/ACTL/blob/main/include/actl/functional/lazy.hpp)
+
+Negative-overhead abstraction!
+
+### Valid use case for output parameters
+
+`std::ranges::transform`
+
+`std::ranges::sort`
+
+`ac::out` and `ac::inout`
+
+## Parameter passing
+
+> For in parameters, pass cheaply-copied types by value and others by reference to const.
+
+Reason: Both let the caller know that a function will not modify the argument, and both allow initialization by rvalues.
+
+For reference, need to put variable in stack and clean up stack.
+
+### Perfect forwarding
+
+Perfect forwarding is not perfect.
+
+Forwarding reference is still a reference, so it prevents passing in register.
+
+ref: cppcon 2019 There are no Zero-cost abstractions Chandler Carruth
+
+For non trivial type, passing by reference is more efficient.
+
+### `std::span`
+
+> Use a span<T> ir a span_p<T> to designate a half-open sequence
+
+Reason: Informal/non-explicit ranges are a source of errors.
+
+On Most platforms `std::span` has no overhead.
+
+`std::mdspan` has overhead on more platforms. Cause `std::mdspan` is too large to get into registers.
+
+`std::span` is not free.
+
+For empty class has size and alignment 1.
+
+`this` Parameters is the implicit first parameter. This isn't efficient if the class is small enough to be passed by value.
+
+C++ 23 introduces static `operator()` and `[]`
+
+## Multiple parameters
+
+### Chain of function calls
+
+Order of parameters is fixed in every ABI.
+
+ref: Not leacing Performance on the jump table Eduardo Madrid in cppcon
+
+> Do not pass an array as a single pointer.
+
+
