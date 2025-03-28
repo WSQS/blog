@@ -150,5 +150,30 @@ Order of parameters is fixed in every ABI.
 ref: Not leacing Performance on the jump table Eduardo Madrid in cppcon
 
 > Do not pass an array as a single pointer.
+> Keep the number of function arguments low.
 
+Reason: Having many arguments opens opportunities for confusion. Passing lots of arguments is often costly compared to alternatives.
 
+Triple product: all int or vector 3
+
+ref: Keep an eye out for buffer security checks
+
+For all int there is a lot of moving.
+
+And stack pointer is heavily used.
+
+Number of Register is limited.
+
+## Conclusion
+
+- Compilers do unexpected thing to your code, because they have to follow all the specification.
+- Compiler Explorer is you friend.
+- C++ Core Guidelines are pretty reasonable from performance point of view.
+
+Guidelines:
+
+- Return by value
+- Pass trivial types by value, oters by reference
+- Follow the rule of 0, or support trivial copy
+- Make APIs consistent
+- Understand abstraction cost on your target platform
