@@ -1,10 +1,11 @@
 ---
-title: "Squeezing the CPU: Multi-THreading in Godot by Pedro J. Estébanez"
+title: "Squeezing the CPU: Multi-Threading in Godot by Pedro J. Estébanez"
 date: 2025-03-06
 url: https://www.bilibili.com/video/BV14ZRAYAE9H/
 tags:
   - GodotCon
   - godot
+  - multi_thread
 ---
 
 ref: [github account](https://github.com/RandomShaper)
