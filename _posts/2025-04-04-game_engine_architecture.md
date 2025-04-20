@@ -104,3 +104,29 @@ data-driven architecture 区分游戏引擎和游戏。
     - Edge
     - Vulkan
   - Collision and Physics
+    - Havok
+    - PhysX
+    - Open Dynamics Engine
+  - Character Animation
+    - Hranny
+    - Havok Aniamtion
+    - OrbisAnim
+  - Biomechanical Character Models: Endorphin and Euphoria
+  - Platform Independence Layer
+- Platform Independence Layer
+- Core Systems
+- Resource Manager
+- Rendering Engine
+  - Low-Leven Renderer
+    - Graphics Device Interface
+    - Other Renderer Components
+  - Scene Graph/Culling Optimizations
+  - Visual Effects
+  - Front End
+- Profiling and Debugging Tools
+- Collision and Physics
+  - Havok
+  - PhysX
+- Animation
+- Human Interface Devices (HID)
+- Audio
