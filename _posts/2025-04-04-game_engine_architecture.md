@@ -69,4 +69,38 @@ data-driven architecture 区分游戏引擎和游戏。
 #### Game Engine Survey
 
 - The Quake Family of Engines
-- 
+- Unreal Engine
+- The Half-Life Source Engine
+- DICE’s Frostbite
+- Rockstar Advanced Game Engine (RAGE)
+- CRYENGINE
+- Sony’s PhyreEngine
+- Microsoft’s XNA Game Studio
+- Unity
+- Proprietary In-House Engines
+- Open Source Engines(OGRE, Panda3D, Yake, Crystal Space, Torque, Irrlicht, Lumberyard)
+- 2D Game Engines for Non-programmers(Multimedia Fusion 2, Game Salad Creator, Scratch)
+
+#### Runtime Engine Architecture
+
+游戏引擎是一个大型软件系统。
+
+游戏引擎是层级结构，上层依赖于下层。
+
+- Target Hardware
+- Device Driver
+- Operating System
+- Third-Party SDKs and Middleware
+  - Data Structures and Algorithms
+    - Boost
+    - Folly
+    - Loki
+    - stl
+  - Graphics
+    - Glide
+    - OpenGL
+    - DirectX
+    - libgcm
+    - Edge
+    - Vulkan
+  - Collision and Physics
