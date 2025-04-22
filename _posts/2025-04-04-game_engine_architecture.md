@@ -130,3 +130,18 @@ data-driven architecture 区分游戏引擎和游戏。
 - Animation
 - Human Interface Devices (HID)
 - Audio
+- Online Multiplayer/Networking
+  - Single-screen multiplayer
+  - Split-screen multiplayer
+  - Networked multiplayer
+  - Massively multiplayer online games (MMOG)
+- Gameplay Foundation Systems：用于弥补游戏代码和底层引擎系统之间的差异的中间胶水层
+  - Game Worlds and Object Models
+  - Event System
+  - Scripting System
+  - Artificial Intelligence Foundations
+  - Game-Specific Sub Systems
+
+### Tools and the Asset Pipeline
+
+
