@@ -144,4 +144,29 @@ data-driven architecture 区分游戏引擎和游戏。
 
 ### Tools and the Asset Pipeline
 
+- Digital Content Creation Tools
+- The Asset Conditioning Pipeline
+- The World Editor
+- The Resource Database
+- Some Approaches to Tool Architecture
+
+### Tools of the Trade
+
+#### Version Control
+
+- SCCS & RCS
+- CVS
+- Subversion
+- Git
+- Perforce
+- NxN Alienbrain
+- ClearCase
+- Microsoft Visual SourceSafe
+
+#### Compilers, Liners and IDEs
+
+- Visual Studio
+- LLVM/Clang
+- gcc/gdb
+
 
