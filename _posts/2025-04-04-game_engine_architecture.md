@@ -195,4 +195,10 @@ ref: Pareto principle
 
 #### Memory Leak and Corruption Detection
 
+Rational Purify: in Purify Plus toolkit
+
+#### Other Tools
+
+### Fundamentals of Software Engineering for Games
+
 
