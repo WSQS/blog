@@ -169,4 +169,30 @@ data-driven architecture 区分游戏引擎和游戏。
 - LLVM/Clang
 - gcc/gdb
 
+Project and Solutions in Visual Studio
+
+##### Build Configuration
+
+###### Common Build Options
+
+- Preprocessor Settings: define macros in command line, conditional compilation
+- Compiler Settings: Debugging information, inline functions expand
+- Linker Settings： Type of output
+
+###### Local and Global Optimizations
+
+- Local Optimization: Work for code without branch, from compiler
+- Global Optimization: common sub-expression elimination, from linker
+
+ref: [nut shell](https://www.nutshell.com/)
+
+#### Profiling Tools
+
+ref: Pareto principle
+
+- Statistical profilers
+- Instrumenting profilers
+
+#### Memory Leak and Corruption Detection
+
 
