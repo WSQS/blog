@@ -201,4 +201,18 @@ Rational Purify: in Purify Plus toolkit
 
 ### Fundamentals of Software Engineering for Games
 
+#### C++ Review and Best Practices
 
+##### Brief Review of Object-Oriented Programming
+
+- class
+  - Encapsulation
+  - Inheritance: is-a
+  - Multiple Inheritance: mix-in class
+- Polymorphism
+- Composition & Aggregation
+- Design Pattern
+  - Singleton
+  - Iterator
+  - Abstract factory
+  - Janitors & RAII
