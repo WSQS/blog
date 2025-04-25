@@ -216,3 +216,19 @@ Rational Purify: in Purify Plus toolkit
   - Iterator
   - Abstract factory
   - Janitors & RAII
+  - C++ Language Standardization: 98 03 11 14 17 20 23 26
+- Coding Standards
+  - Interfaces are king
+  - Good names encourage understanding and avoid confusion
+  - Don’t clutter the global namespace
+  - Follow C++ best practices
+  - Be consistent
+  - Make errors stick out： ref: [Wrong](http://www.joelonsoftware.com/articles/Wrong.html)
+
+#### Catching and Handling Errors
+
+- User errors
+- Programmer errors
+
+- Error Return Codes
+- Exception handling
