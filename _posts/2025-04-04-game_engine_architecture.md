@@ -232,3 +232,134 @@ Rational Purify: in Purify Plus toolkit
 
 - Error Return Codes
 - Exception handling
+- Assertions: Macro
+  - MSVC: `__debugbreak()`
+  - GCC: `__builtin_trap()`
+  - Clang: `__builtin_debugtrap()`
+- Compile Time Assertions: `static_assert`
+
+ref: Writing Solid Code Steve Maguire
+
+ref: [static_assert](https://www.pixelbeat.org/programmaing/gcc/static_assert.html)
+
+#### Data, Code and Memory Layout
+
+##### Numeric Representations
+
+- Subnormal Values
+- Machine Epsilon
+- Units in the Last Place (ULP)
+- Impact of Floating-Point Precision on Software
+
+##### Primitive Data Types
+
+- char
+- int, short, long
+- float
+- double
+- bool
+- `<cstdint>`
+- OGRE
+- Endianness
+  - Little-endian
+  - Big-endian
+  - Integer Endian-Swapping: gcc `__builtin_bswapXX()`
+  - Floating-Point Endian-Swapping: swap as of it is integer `reinterpret_cast`
+
+kili -> kibi
+
+mega -> mebi
+
+giga -> gibi
+
+tera -> tebi
+
+peta -> pebi
+
+exa -> exbi
+
+zatta -> zebi
+
+yotta -> yobi
+
+##### Declarations, Definitions and Linkage
+
+- Declarations
+- Definitions
+- inline for function in header file
+- Templates and Header Files
+
+The static keyword is used to change a definition’s linkage to internal.
+
+##### Memory Layout of a C/C++ Program
+
+- Text segment
+- Data segment
+- BSS segment
+- Read-only data segment
+- Stack
+  - Return Address
+  - CPU register
+  - Local variables
+- Dynamic Allocation Heap: `new` `delete`
+
+##### Member Variables
+
+类的静态成员必须要在cpp中初始化是因为需要在对应的.obj文件给静态成员留下空间。
+
+- Alignment and Packing
+- Inheritance
+- virtual functions: Virtual table pointer
+
+#### Computer Hardware Fundamentals
+
+##### Learning from the Simpler Computers of Yesteryear
+
+ref: [Inside the App IIe](http://www.apple2scans.net/files/InsidetheIIe.pdf)
+
+ref: [x86 instruction](http://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html)
+
+ref: Graphics Programming Black Book Michael Abrash
+
+##### Anatomy of a Computer
+
+- CPU
+  - ALU
+  - FPU
+  - VPU
+  - MC
+  - registers
+  - CU
+  - Clock: MIPS & FLOPS
+- Memory
+  - ROM
+  - RAM
+- Buses
+
+##### Machine and Assembly Language
+
+- Instruction Set Architecture (ISA)
+  - Move
+  - Arithmetic operations
+  - Bitwise operators
+  - Shift/rotate operators
+  - Comparison
+  - Jump and branch
+  - Push and pop
+  - Function call and return
+  - Interrupt
+- Machine Language
+  - opcode
+  - operands
+  - options field
+
+ref: [MachineLanguage](http://aturing.umcs.maine.edu/~meadow/courses/cos335/Asm07-MachineLanguage.pdf)
+
+- Assembly Language:`assembler`
+  - addressing modes
+
+ref: [x86 assemble](https://www.cs.virginia.edu/~evans/cs216/guides/x86.html)
+
+ref: [paper](https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html)
+
+#### Memory Architectures
