@@ -363,3 +363,18 @@ ref: [x86 assemble](https://www.cs.virginia.edu/~evans/cs216/guides/x86.html)
 ref: [paper](https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html)
 
 #### Memory Architectures
+
+- Memory Mapping
+  - Memory-Mapped I/O
+  - VRAM
+- Virtual Memory
+  - Pages
+  - Core dump
+  - translation lookaside buffer
+- Memory Architectures for Latency Reduction
+
+ref: [virtual](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Memory/virtual.html)
+
+ref: [virtual-memory-paging-and-swapping](https://gabrieletolomei.wordpress.com/miscellanea/operating-systems/virtual-memory-paging-and-swapping/)
+
+ref: [paper](https://www.akkadia.org/drepper/cpumemory.pdf)
