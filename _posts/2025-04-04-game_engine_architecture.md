@@ -372,6 +372,7 @@ ref: [paper](https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html)
   - Core dump
   - translation lookaside buffer
 - Memory Architectures for Latency Reduction
+  - The Memory Gap
 
 ref: [virtual](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Memory/virtual.html)
 
