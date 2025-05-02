@@ -372,7 +372,17 @@ ref: [paper](https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html)
   - Core dump
   - translation lookaside buffer
 - Memory Architectures for Latency Reduction
-  - The Memory Gap
+  - The Memory Gap: cpu的发展速度远高于内存的发展速度
+    - Cache
+    - arranging instructions
+    - arranging program's data
+- Memory Cache Hierarchies
+  - L1, L2, L3
+  - cache hit & cache miss
+  - Cache Lines
+    - Spatial locality
+    - Temporal locality
+  - Cache Lines Mapping
 
 ref: [virtual](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Memory/virtual.html)
 
