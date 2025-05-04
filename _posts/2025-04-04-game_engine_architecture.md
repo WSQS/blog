@@ -383,9 +383,87 @@ ref: [paper](https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html)
     - Spatial locality
     - Temporal locality
   - Cache Lines Mapping
+    - direct-mapped cache
+  - Multilevel Caches
+  - Instruction Cache and Data Cache: Distinct in L1 cache
+  - cache coherency
+    - MESI
+    - MOESI
+    - MESIF
+  - Organize your data in contiguous blocks
+  - Avoid calling functions in body loop
+- Nonuniform Memory Access(NUMA)
+  - UMA
+  - NUMA
 
 ref: [virtual](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Memory/virtual.html)
 
 ref: [virtual-memory-paging-and-swapping](https://gabrieletolomei.wordpress.com/miscellanea/operating-systems/virtual-memory-paging-and-swapping/)
 
 ref: [paper](https://www.akkadia.org/drepper/cpumemory.pdf)
+
+### Concurrent Programming
+
+Parallelism is a factor for computer speed up.
+
+#### Defining Concurrency and Parallelism
+
+A concurrent piece of software utilizes multiple flows of control to solve a problem.
+
+- Thread
+- Fibers
+- Coroutines
+
+并发的一个要点是要多个线程对共享数据进行操作。关键问题在于`数据竞争`。
+
+- parallelism
+- serial
+
+- implicit parallelism:instruction level parallelism
+  - pipelining
+  - superscalar architecture
+  - very long instruction word
+- explicit parallelism:  running more than one instruction stream simultaneously
+  - hyperthreaded CPUs
+  - multicore CPUs
+  - multiprocessor computers
+  - computer clusters
+  - grid computing
+  - cloud computing
+
+- Task parallelism
+- Data parallelism
+
+- Flynn’s Taxonomy
+  - Single instruction, single data (SISD)
+  - Multiple instruction, multiple data (MIMD)
+  - Single instruction, multiple data (SIMD)
+  - Multiple instruction, single data (MISD)
+  - Single instruction, multiple thread (SIMT)
+
+#### Implicit Parallelism
+
+##### Pipelining
+
+Execute command:
+
+- Fetch
+- Decode
+- Execute
+- Memory access
+- Register write-back
+
+CPU can execute each stage at the same time. `pipelining` makes this happened.
+
+- latency
+- throughput
+
+pipeline depth
+
+stalls: Bubble in instructions
+
+dependencies cause stalls:
+
+- data dependencies: `instructions reordering` and `out-of-order execution`(by cpu)
+- control dependencies: `speculative execution` with `branch penalty`, 'branch prediction' hardware
+- structural dependencies
