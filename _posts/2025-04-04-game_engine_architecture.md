@@ -465,5 +465,77 @@ stalls: Bubble in instructions
 dependencies cause stalls:
 
 - data dependencies: `instructions reordering` and `out-of-order execution`(by cpu)
-- control dependencies: `speculative execution` with `branch penalty`, 'branch prediction' hardware
+- control dependencies: `speculative execution`
+  - `branch penalty`
+  - `branch prediction` hardware
+  - `predication`
 - structural dependencies
+
+#####  Superscalar CPUs
+
+`superscalar`: multi instruction in one clock time.
+
+`resource dependency`
+
+`reduced instruction set` RISC
+
+##### Very Long Instruction Word (VLIW)
+
+eaves the task of dispatching instructions to those compute elements entirely to the programmer and/or compiler.
+
+#### Explicit Parallelism
+
+- hyperthreaded: CPU select from two separate instruction stream at once.
+- multicore: symmetry or asymmetry
+- destributed computing: Multiple stand-alone computers
+  - computer clusters
+  - grid computing
+  - cloud computing
+
+### Operating System Fundamentals
+
+#### The Kernel
+
+- kernel mode: Has access to all of the machine language instructions in CPU, include privileged instructions.
+- user mode
+
+#### Interrupts
+
+interrupt service routine (ISR)
+
+- hardware interrupts
+- software interrupts
+
+#### Kernel Calls
+
+system call: user software perform a privileged operations.
+
+software interrupt
+
+context switching
+
+system call warped in to  kernel API function.
+
+#### Preemptive Multitasking
+
+multiprogramming
+
+time-slicing
+
+preemptive multitasking: operating system controlled time-slicing
+
+#### Processes
+
+A running instance of a program contained in an executable file.
+
+Process anatomy:
+
+- pid
+- permissions
+- parent process
+- virtual memory space
+- environment variables
+- file handles
+- working directory
+- resources for synchronization and communication between process
+- threads: A instance of a single stream of machine language instructions.
