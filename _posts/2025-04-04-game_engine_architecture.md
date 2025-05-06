@@ -545,4 +545,5 @@ Every process has its own virtual page table.
 - text, data and bss sections
 - call stack
 - heap
-- 
+- pages sheared with other processes
+- kernel space
