@@ -539,3 +539,10 @@ Process anatomy:
 - working directory
 - resources for synchronization and communication between process
 - threads: A instance of a single stream of machine language instructions.
+
+Every process has its own virtual page table.
+
+- text, data and bss sections
+- call stack
+- heap
+- 
