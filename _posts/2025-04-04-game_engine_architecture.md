@@ -543,7 +543,10 @@ Process anatomy:
 Every process has its own virtual page table.
 
 - text, data and bss sections
+- view of shared library
 - call stack
 - heap
 - pages sheared with other processes
 - kernel space
+
+shared libraries can be shared between process in memory. For changed libraries no need for relinked.
