@@ -492,21 +492,21 @@ eaves the task of dispatching instructions to those compute elements entirely to
   - grid computing
   - cloud computing
 
-### Operating System Fundamentals
+#### Operating System Fundamentals
 
-#### The Kernel
+##### The Kernel
 
 - kernel mode: Has access to all of the machine language instructions in CPU, include privileged instructions.
 - user mode
 
-#### Interrupts
+##### Interrupts
 
 interrupt service routine (ISR)
 
 - hardware interrupts
 - software interrupts
 
-#### Kernel Calls
+##### Kernel Calls
 
 system call: user software perform a privileged operations.
 
@@ -516,7 +516,7 @@ context switching
 
 system call warped in to  kernel API function.
 
-#### Preemptive Multitasking
+##### Preemptive Multitasking
 
 multiprogramming
 
@@ -524,7 +524,7 @@ time-slicing
 
 preemptive multitasking: operating system controlled time-slicing
 
-#### Processes
+##### Processes
 
 A running instance of a program contained in an executable file.
 
@@ -550,3 +550,188 @@ Every process has its own virtual page table.
 - kernel space
 
 shared libraries can be shared between process in memory. For changed libraries no need for relinked.
+
+##### Threads
+
+- tid: may or may not be unique
+- call stack
+- registers
+- thread local storage
+
+thread libraries:
+
+- IEEE POSIX 1003.1c standard thread library (pthread)
+- c11 & c++11 thread library
+
+- create: `pthread_create()` `CreateThread()` `std::thread`
+- terminate: return `pthread_exit()`
+- request to exit
+- block: sleep
+- yield: `pthread_join()`
+- join: `pthread_join()`
+- spin-wait or busy-wait or polling
+- yield while polling: `pthread_yield()` `Sleep(0)`
+
+Context Switch
+
+- Running
+- Runnable
+- Blocked
+
+Thread Priorities and Affinity
+
+Thread Local Storage
+
+##### Fibers
+
+Fiber never scheduled directly by the kernel.
+
+- create: `ConvertTHreadToFiber()` `CreateFiber()`
+- terminate: `DeleteFiber()`
+- yield: `SwitchToFiber()`
+
+##### User-Level Threads
+
+user-level threads: no need to make kernel calls.
+
+##### Coroutines
+
+A coroutine is a generalization of the concept of a subroutine.
+
+The next time the coroutine is called it continues from where it left off.
+
+ref:[Handmade Coroutines for Windows](https://probablydance.com/2013/02/20/handmade-coroutines-for-windows/)
+
+ref:[thread introduction](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/4_Threads.html)
+
+ref:pthread document
+
+ref:Nikita Ishkov’s "A Complete Guide to Linux Process Scheduling" online
+
+ref:[goroutines](https://www.youtube.com/watch?v=f6kdp27TYZs)
+
+### Introduction to Concurrent Programming
+
+concurrency: the composition of independently executing computations.
+
+Using concurrent to solve match problems or just use multi core.
+
+- Communicate
+  - Message passing
+  - Shared memory
+
+distributed shared memory
+
+#### Race Conditions
+
+race condition: the behavior of a program is dependent on timing.
+
+critical races: a race condition that has the potential to cause incorrect program behavior.
+
+Data Races:  critical race condition in which two or more flows of control interfere with one another while reading and/or writing a block of shared data, resulting in data corruption.
+
+read-modify-write operation
+
+#### Critical Operations and Atomicity
+
+atomic operation
+
+invocation and response
+
+- Preamble section
+- Critical section
+- Postamble section
+
+A critical operation can be said to have executed atomically if its invocation and response are not interrupted by another critical operation on that same object.
+
+mutex:make sure all operation executed in sequence but not specific order.
+
+thread synchronization primitives
+
+data-centric consistency models
+
+ref:[data-centric consistency models](https://www.cs.cmu.edu/~srini/15-446/S09/lectures/10-consistency.pdf)
+
+### Thread Synchronization Primitives
+
+- atomic
+- synchronize
+
+The synchronization primitives require kernel call, and can cost upwards of 1000 clock cycles.
+
+lock-free programming
+
+#### Mutexes
+
+mutex: mutually exclusive
+
+- create() `pthread_mutex_t` `std::mutex`
+- destroy()
+- lock() `pthread_mutex_lock()` `std::mutex::lock()`
+- try_lock()
+- unlock() `pthread_mutex_unlock()` `std::mutex::unlock()`
+
+#### Critical Section
+
+Windows alternative for mutex
+
+`InitializeCriticalSection()`
+
+`DeleteCriticalSection()`
+
+`EnterCriticalSection()`
+
+`TryEnterCriticalSection()`
+
+`LeaveCriticalSection()`
+
+ref:[futex](https://www.akkadia.org/drepper/futex.pdf)
+
+#### Condition Variables
+
+A queue of waiting sleeping threads
+
+#### Semaphores
+
+semaphore: a atomic counter.
+
+- `init()`
+- `destroy()`
+- `take()` `wait()`
+- `give()` `signal()`
+
+binary semaphore: can be unlocked by another thread that not locked it. Used to send a signal from one thread to another.
+
+### Problems with Lock-Based Concurrency
+
+Deadlock: circular dependency
+
+- mutual exclusion
+- hold and wait: reducing the number of locks
+- no lock preemption
+- circular wait: imposing a global order to all lock-taking in the system
+
+Livelock: unlock all mutex if thread been blocked
+
+Starvation: one or more threads fail to receive any execution time on the CPU.
+
+Priority Inversion
+
+The Dining Philosophers
+
+### Some Rules of Thumb for Concurrency
+
+- Global Ordering Rules
+- Transaction-Based Algorithms
+- Minimizing Contention
+- Thread Safety
+
+monitor: A class whose functions are all thread safe
+
+### Lock-Free Concurrency
+
+lock-free: Never allow a thread to block.
+
+- Blocking
+- Obstruction freedom
+- Lock freedom
