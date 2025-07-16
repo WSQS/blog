@@ -735,3 +735,30 @@ lock-free: Never allow a thread to block.
 - Blocking
 - Obstruction freedom
 - Lock freedom
+- Wait freedom: lock freedom + starvation freedom
+
+#### Causes of Data Race Bugs
+
+- interruption of one critical operation by anther
+- instruction reordering
+- hardware specific memory ordering semantics
+
+#### Implementing Atomicity
+
+Making a critical operation atomic.
+
+- Atomicity by Disabling Interrupts: unusable in multi core
+- Atomic Instruction
+  - atomic reads and writes
+  - atomic read-modify-write instructions
+- Test and Set
+- Exchange
+- Compare and Swap: ABA problem
+- load linked and store conditional
+- Strong and Weak Compare-Exchange: C++11
+
+ref: Strong Compare and Exchange Lawrence Crowl
+
+#### Barriers
+
+Instruction Reordering can cause bug in concurrent programs.
