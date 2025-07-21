@@ -56,3 +56,17 @@ PL/1 rule: keywords are not reserved
 形式语言是一组由字符组成的字符串。字母表对形式语言的定义来说是关键的。
 
 Meaning function: 将字符串映射到语义。
+
+区分语法与语义。
+
+Meaning function是多对一的。
+
+## Lexical Specifications
+
+Keyword: `'if' + 'else' + 'then' + ...`
+
+Integer: a non-empty string of digits. `digit digit*` `digit +`
+
+Identifier: strings of letter or digits, staring with a letter. `letter (letter + digit)*`
+
+Whitespace: a non-empty sequence of blanks, newlines, and tabs. `(' ' + '\n' + '\t')+`
