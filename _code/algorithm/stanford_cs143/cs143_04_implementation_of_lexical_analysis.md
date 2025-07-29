@@ -1,7 +1,7 @@
 ---
-title: "cs143 -4: Implementation of Lexical Analysis"
-date: 2025-07-16
-url: https://www.bilibili.com/video/BV1huRUYYEcw?p=3
+title: "cs143 04: Implementation of Lexical Analysis"
+date: 2025-07-22
+url: https://www.bilibili.com/video/BV1huRUYYEcw?p=4
 tags:
   - algorithm
 ---
