@@ -4,6 +4,7 @@ date: 2025-08-01
 url: https://craftinginterpreters.com/
 tags:
   - algorithm
+  - compile
 ---
 
 ## Introduction
