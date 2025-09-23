@@ -124,4 +124,122 @@ SMoL是顺序求值的，同时是从左向右求值的。
 
 ### Defining the Evaluator
 
-实现一个计算器。
+实现一个计算器。它的输入是`Exp`，输出是一个`Number`。
+
+递归处理AST。并用`type-case`对两种类型进行处理。
+
+### Testing the Evaluator
+
+使用test方法对求值器进行测试。
+
+增加标记`(print-only-errors #true)`来让测试只输出失败的条目。
+
+### Some Subtler Tests
+
+浮点数的加法需要特殊处理。
+
+ref: [浮点数加法说明](https://0.30000000000000004.com/)
+
+需要确认主语言的语义是我们想要的，例如浮点数计算这种。
+
+## Parsing: From Source to ASTs
+
+### The Problem
+
+现有的直接写AST的方式的表面语法太复杂了。需要一个更方便的表层语法。Parsing是将输入语法转换成AST。
+
+选择使用Racket的括号语法进行表示。
+
+### S-Expressions
+
+这样的语法是`s-expressions`。plait提供了`s-exp`相关的函数来进行读取和判断。
+
+### Primus Inter Parsers
+
+Parser是将s-expressions转换成Exp。
+
+`test/exn`进行测试之后，会对抛出的异常是否包含字串来看是否显示这个报错。
+
+## Evaluating Conditionals
+
+要支持语法表达式。需要：
+
+- 拓展数据类型支持表示条件
+- 拓展求值器来处理条件表达式
+- 拓展解析器来生成新的表示
+
+### Extending the AST
+
+### Extending the Calculator
+
+### The Design Space of Conditionals
+
+条件表达式也有不同的设计。
+
+- test-expression支持的类型。必须是布尔值，又或者是有一些值表示true，另一些表示false，其中的值的定义又是各不相同的，这部分应该尽可能简单，比如Scheme，Ruby和Lua，都只有少数几个值是false。
+- 分支的类型。是statement还是expression。
+- expression的值的类型对静态类型语言来说需要两个分支的值是一样的，对动态类型语言没有这样的限制。
+
+### Using Truthy-Falsy Values
+
+Rackte中只有`#false`是非。
+
+### Implementing Conditionals
+
+先简单实现一个if0，也就是只看test-expression的值是不是0。
+
+解释器的一部分工作可以复用宿主语言的功能，例如if，也可以在实现中引入一些差异。
+
+### Adding Booleans
+
+一个成熟的语言需要多种类型。
+
+### The Value Datatype
+
+增加一个类型Value，用于表示求值器可以得到的结果。
+
+### Updating the Evaluator
+
+需要处理非数字相加的情况。增加了一个函数add来处理这种情况。
+
+## Evaluating Local Binding
+
+Binding: 将名字和值关联起来。
+
+Local: 意味着只有程序的一些区域可以访问这个值，其他区域无法使用这个值。
+
+### A syntax for Local Binding
+
+使用BNF(Backus-Naur Form)来标记语法。
+
+BNF区分终止符和非终止符。终止符需要被`<>`包裹。
+
+### The Meaning of Local Binding
+
+`let1`赋值。
+
+### Static Scoping
+
+SMoL的重要概念：静态作用域，变量的绑定是基于其位置的，而不是运行程序的顺序。
+
+控制流控制绑定是动态绑定的变体。动态绑定是毋庸置疑的编程语言的错误设计。
+
+动态语义的python论文：
+
+ref： [Python: The Full Monty: A Tested Semantics for the Python Programming Language](https://cs.brown.edu/~sk/Publications/Papers/Published/pmmwplck-python-full-monty/)
+
+静态作用域允许IDE重命名变量。
+
+静态作用域比起动态作用域实现起来会更加复杂一些。
+
+### An Evaluator for Local Binding
+
+变量需要被替换。
+
+### Caching Substitution
+
+但是替换作为一种实现是低效的，每一个变量的绑定都需要和程序大小线性相关的时间去进行替换。更可行的方法是将变量存储在一个被称为环境的数据结构中，其中存储了变量名和其值，这实际上是一个键值对。
+
+尽管我们没有使用替换，但是我们希望程序运行的结果和替换是一致的。
+
+环境使用哈希表来实现。
