@@ -243,3 +243,145 @@ ref： [Python: The Full Monty: A Tested Semantics for the Python Programming La
 尽管我们没有使用替换，但是我们希望程序运行的结果和替换是一致的。
 
 环境使用哈希表来实现。
+
+## Evaluating Functions
+
+### Functions in the Language
+
+top-level函数、非top-level函数和匿名函数。
+
+### Extending the Representation
+
+函数不需要默认有名字，函数名可以由`let1`赋值。
+
+函数需要定义和使用两种表示：introduction和elimination。
+
+### Evaluating Functions
+
+函数本身也需要一种值表示，包括了形参和表达式。
+
+side-effect: 在函数体之外可观测到的系统的变化
+
+pure function: 对同一个输入，输出都是相同的，并且没有副作用的函数
+
+### Extending Values
+
+需要做的是：
+
+- 求函数值
+- 求变量值
+- 检查函数类型
+- 将实参赋值给形参
+- 求值函数体
+
+### Stepping Back
+
+到目前为止已经实现了一个完整的编程语言。
+
+### Extending Tests
+
+函数中捕获的变量的作用域会在被调用时覆盖掉，因此会将语言变成动态作用域的语言。
+
+### Return to Static Scope
+
+Environment的实现实际上时对替换的一种优化，所以还是要回到替换上来看。
+
+通过函数内部存储一个它创建时的环境来解决这个问题。 这样的函数也就是闭包。
+
+closed function: 没有未绑定变量的函数。
+
+闭包不是closed function。
+
+ref: A Brief, Incomplete, and Mostly Wrong History of Programming Languages
+
+函数参数和表达式不应该在闭包环境中被求值。
+
+### A Subtle Test
+
+## How SMoL Becomes Large
+
+处理AST的程序可以输出各种不同的结果，解释器输出数值，编译器输出程序，类型检查器使出类型正确性，但是它们的基本结构都是一致的。
+
+### Redundancy in Languages
+
+for和while是重复的。
+
+### Desugaring
+
+区分核心语言和表层语言。表层语言增加了语法糖，各种不同的结构，但是可以被转换成同一种核心语言的结构，转换的程序是desugarer。
+
+在报错时，为了报错的正确，所以需要对语法糖进行特殊处理。
+
+一种常规的desugar的方法是将AST重写成子集的AST。在括号语法的语言中，parse分为两个部分，一个是粗糙的括号语法，另一个是精细的AST，前者很适合用来做语法糖的展开和重写。这通常被称为宏系统，在解析之前，将源码重写为源码。绝大多数语言都有语法糖，但是只有很少一部分语言拥有宏系统，让程序员拥有重写程序的能力。
+
+### Macros By Example
+
+改为使用racket`#lang racket`。
+
+### A New Conditional
+
+实现一个更严格版本的if函数，在进行if之间先进行类型检查，只支持布尔值。
+
+问题在于racket是立即求值的，所以strict-if的两个分支都会被执行。
+
+使用宏可以避免这个问题。
+
+DrRacket的Macro Stepper支持逐步显示宏是如何展开的。
+
+### Local Binding
+
+`let1`无法被函数实现，因为每一个参数都会被先求值。
+
+special forms: 在语言中新加入的语法
+
+可以将变量展开成函数，将变量的值变为函数的参数，let1的body变为函数的body。
+
+left-left-lambda: 立即被执行的匿名函数。在javascript中被称为IIFE(Immediately Invoked Function Expression)。
+
+### Binding More Locals
+
+可变参数宏。使用`...`表示可变参数。
+
+### Multi-Armed Conditionals
+
+`...`表示0或更多个参数，所以，可以递归的调用宏。支持模式匹配。
+
+## More on Macros
+
+### A Definitional Convenience
+
+可以使用符号`_`来避免重复使用宏。
+
+### Name Capture
+
+宏中的变量并不只是名字，其中还记录了绑定信息。这可以避免动态作用域。这一特性是hygiene。
+
+### A Truthy/Falsy Idiom
+
+对于if，应该如实返回值，而不只是true。
+
+### A Macro Definition Hazard
+
+问题在于，对于上面直接返回值的情况，会导致值被计算了两次，这对于有副作用的表达式是有问题的。需要将对应的值，使用lat保存下来。
+
+### Back to Hygiene
+
+hygiene对局部变量也是起效的。
+
+### Generalizing Macros
+
+实现一个orN。
+
+## A Standard Model of Objects
+
+对象可以看作是闭包的推广。
+
+对象可以被作为结构或者是作为语法糖。
+
+前者需要：
+
+- 进行额外的记录，实现比较琐碎
+- 解释器会变得越来越庞大
+- 难以编写实例程序和测试
+
+使用语法糖和宏来实现对象。
