@@ -385,3 +385,118 @@ hygiene对局部变量也是起效的。
 - 难以编写实例程序和测试
 
 使用语法糖和宏来实现对象。
+
+### What is an Object?
+
+对象的特点
+
+- 一个值
+- 将名字映射为
+- 其他值或者方法
+
+方法可以被看做只是函数。
+
+member: 对象的条目，不管是变量还是方法。
+
+使用lambda来表示对象，并使用case来进行分派。
+
+lambda是一个只有一个entry point的对象。
+
+racket语法中使用`.`来表示绑定后续所有参数到一个值中。`apply`将这些参数拼接到调用函数中。
+
+这允许我们通过计算来获得成员名。
+
+有时会遇到一个目标语言没有对应部分的情况。
+
+### The “Object” Pattern
+
+### Constructors
+
+向函数添加参数就相当于实现了构造了参数。
+
+### The “Class” Pattern
+
+引入了构造函数实际上就转变为了一个类型。
+
+### State
+
+有人认为对象最开始时用于封装状态的。
+
+Smalltalk的创建者Alan Key认为OOP的理想是找到一个比赋值更为灵活的方案，甚至更进一步直接把赋值给消除掉。
+
+ref: [The Early History Of Smalltalk](http://worrydream.com/EarlyHistoryOfSmalltalk/)
+
+使用`set!`来对变量进行操作。
+
+### Private Members
+
+同一个类型的不同的实例可以互相访问private成员。
+
+增加一个函数内部的变量就可以作为私有成员了。
+
+### A Refined “Class” Pattern
+
+可以在类中引入私有成员。
+
+### Static Members
+
+静态变量是在构造函数之前的标识符。
+
+### A Re-Refined “Class” Pattern
+
+### Objects with Self Reference
+
+实现self或this。
+
+#### Self-Reference Using Mutation
+
+设定一个名称用于递归的自调用。
+
+使用一个dummy值声明变量再将其改变为递归调用的值，是递归let的核心。
+
+#### Self-Reference Without Mutation
+
+另一种方法是将函数的第一个参数设置为this。通过这种方式可以区分函数和方法。
+
+### Dynamic Dispatch
+
+动态分配将条件分支从用户程序迁移到了语言实现中。
+
+关键是一个可拓展的条件语句。其实就是实现了同名函数。
+
+这样的特点是一种黑盒可拓展性，系统的一部分进行拓展并不需要修改对应的其他部分。这通常被认为是面向对象的一个关键优点。对应的，函数式编程可以方便的拓展方法，面向对象可以通过访问器设计模式将来实现这类似函数式编程的特点。
+
+ref:[Synthesizing Object-Oriented and Functional Design to Promote Re-Use](https://cs.brown.edu/~sk/Publications/Papers/Published/kff-synth-fp-oo/)
+
+## What Else do Objects Have?
+
+### Member Name Design Space
+
+有两个关于对象的问题:
+
+- 对象的成员名是静态的还是动态的
+- 访问对象的成员名是静态的还是动态的
+
+对于两者都是动态的语言，通常会使用哈希表实现。
+
+这一章关注的是都是静态的语言。
+
+### What (Goes In) Else?
+
+对于静态类型变量，可以使用条件表达式而不是哈希表来处理变量。同时，else可以用于进行继承。
+
+不应该随便修改基类，参见，脆弱基类问题。
+
+### A Java Excursion
+
+java需要在子类构造函数中显式调用父类构造函数。因为子类也是父类的实例。
+
+### Extending Classes
+
+子类中需要构造和存储一个父类的变量。这是拓展类。
+
+Java中，对象继承的字段会保留，并可以通过cast访问，方法会被移除。
+
+使用self-application方法的定义对于递归调用来说更为方便。
+
+### Extending Prototypes
