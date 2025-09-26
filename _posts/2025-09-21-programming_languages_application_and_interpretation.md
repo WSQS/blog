@@ -500,3 +500,110 @@ Java中，对象继承的字段会保留，并可以通过cast访问，方法会
 使用self-application方法的定义对于递归调用来说更为方便。
 
 ### Extending Prototypes
+
+Prototype与此不同，将父类看作一个对象本身，而不是一个类。所有继承自同一对象的类会访问同一个对象，修改也是都同步的。
+
+可以参考Self语言。
+
+ref： [Self 官网](http://selflanguage.org/)
+
+一些语言设计者认为Prototype相比起类是更加原始的。
+
+### Multiple Inheritance
+
+一个对象可以继承自多个实例，问题是，查找的顺序。还有菱形继承问题。
+
+需要算法来决定查找的顺序。
+
+多继承是一个十分复杂的问题，只有在还没认真考虑之前才显得迷人。
+
+### Class Extensions: Mixins and Traits
+
+在java中，类体中定义的是类型拓展
+
+mixins: 函数拓展可以独立定义，并随后附加到各种类型上。
+
+这可以利用多继承的优点，同时避免复杂了查找算法。
+
+mixin其实只是一个对类的方法。
+
+mixin需要接口描述期望的输入和输出，也就是两个接口。
+
+这符合设计模式的要求: Program to an interface, not an implementation.
+
+ref: [Classes and Mixins](https://cs.brown.edu/~sk/Publications/Papers/Published/fkf-classes-mixins/)
+
+trait是mixin的推广，一个类同时拓展一组mixin。
+
+## Introduction to Types
+
+对类型语言，写代码就是在写证明。
+
+使用类型进行静态检查。
+
+### A Standard Model of Types
+
+类型检查输入的是语法树，输出的是布尔值。
+
+不止需要知道子表达式是否类型正确，还需要知道当前表达式的类型是否正确，因此需要知道两个子表达式的类型。将类型检查返回的类型改为是Type。
+
+类型检查器的实现架构和解释器是一致的，一个表示AST的代数数据类型，和一个递归处理的结构。这也就是SImPl。
+
+类型检查器对弱值进行运算，即不管什么值，只管类型。传统类型检查器的优点和缺点都是来自于这个忽略。
+
+### A Concise Notation
+
+对类型进行表示:`|- e : T`表示e的类型是T。
+
+axioms: 类型检查的基础情况。
+
+antecedent: 前件，生成的前提
+
+consequent：后件，结论
+
+## Growing Types: Division, Conditionals
+
+### Handling Division
+
+除法是部分函数，对于除数是0的情况需要特殊处理。处理方式：
+
+- 返回一个`(Optionof Number)`，但是这意味着所有的除法都需要检查。
+- 依赖类型检查，这需要将0设定为一个特殊的类型，并且需要调用者证明传入的参数并不是0，这对用户会有心智负担，基于莱斯定理，这是无法自动判断的。
+- 返回一个普通的值，但是对于除数为0的情况，会抛出一个异常。这会给用户带来心智负担。
+
+ref: 莱斯定理
+
+对于更通用的处理部分函数的方法，可以参见：
+
+ref: [Partial Domains](https://dcic-world.org/2025-02-09/partial-domains.html)
+
+已有的语言大多选择了第三种方法，但是正不断有语言尝试前两种方法。
+
+### Another Perspective on Types
+
+另一种看待类型的视角是将类型看作一个静态声明。parse就是这样一个过程。类型是对这个的拓展。
+
+从可计算性理论来看，parse是上下文无关的，类型检查时上下文相关的。需要将这两个检查划分到两个阶段中，先进行parse检查再进行类型检查可以减少类型检查的复杂度。
+
+### From Axioms and Rules to Judgments
+
+需要将AST的每一个检点都用axiom进行规定。这样的树叫做judgment。使用模式匹配来处理不同情况。
+
+### Judgments and Errors
+
+类型错误是无法创建一个judgment。
+
+### Typing Conditionals
+
+对于if表达式，因为有两个分支，所以需要考虑两个分支返回的类型，其中有不确定性。解决方案如下：
+
+- 提供一个union类型来表示这个类型或那个类型。
+- 约束所有分支都应该有相同的类型。
+
+ref: [Inferring Type Rules for Syntactic Sugar](https://cs.brown.edu/~sk/Publications/Papers/Published/pk-resuarging-types/)
+
+### Where Types Diverge from Evaluation
+
+类型检查和测试是互为补充。Concolic测试，尝试结合两者的优点。
+
+## Growing Types: Typing Functions
