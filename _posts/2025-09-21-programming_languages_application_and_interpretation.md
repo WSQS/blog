@@ -607,3 +607,63 @@ ref: [Inferring Type Rules for Syntactic Sugar](https://cs.brown.edu/~sk/Publica
 类型检查和测试是互为补充。Concolic测试，尝试结合两者的优点。
 
 ## Growing Types: Typing Functions
+
+### Typing Function Applications
+
+对函数的类型检查需要对整个表达式进行检查。
+
+函数自身就是一个类型，但是函数类型需要确认输入与输出的类型。需要检查函数的形参类型和实参类型是否一致，如果一致，那么函数的类型就是函数返回值的类型。
+
+类型检查的顺序不是固定的，可以是从前到后也可以是从后到前。
+
+### Typing Function Definitions
+
+对匿名函数的类型进行定义。匿名函数的类型由函数体决定。但是函数的返回类型会受到参数传入类型的影响，所以并不能直接通过函数体直接确认函数的类型。
+
+### Typing Variables
+
+和解释器类似的，类型检查器也需要一个Environment来对函数进行类型检查。对类型的证明，需要基于Environment给出。
+
+### Back to Typing Function Definitions
+
+因此函数的形参类型需要由Environment给出。并基于此来对函数体进行类型推导。需要拓展的是静态作用域，也就是函数声明时所处的作用域。因为声明时不知道函数的参数的类型，所以需要增加类型注解来让类型解释器将该变量名拓展为该类型。
+
+### More Divergence Between Types and Evaluation
+
+对类型检查器，函数只有在声明时，才会被访问，而对求值器，函数会在运行时执行任意多次。
+
+### Assume-Guarantee Reasoning
+
+函数的声明和调用在类型检查中有对应关系。
+
+### Recursion and Infinite Loops
+
+递归调用。Simply Typed Lambda Calculus(STLC)通过类型检查来避免无限循环的表达式。
+
+Standard ML使用STLC来避免模块之间的循环依赖。
+
+尽管一些函数是长期运行的，但是其实是在不断周期调用必须要结束的程序，如果那个程序无法正常结束，那么就会进入异常状态。
+
+增加类型系统可以改变语言的表达能力。类型是语义。
+
+### Typing Recursion
+
+增加递归函数构造器。需要声明函数的参数和返回值类型。在处理函数体时，会先将函数的类型传递给函数名。也就是说，函数的返回值的声明是为了避免递归调用的类型检查错误而设计的。
+
+## Safety and Soundness
+
+SMoL的一个核心概念是安全。一些运算是部分函数，SMoL语言通过报告违规来确保这一点。
+
+ref: [JavaScript 只有很少的违规](https://www.destroyallsoftware.com/talks/wat)
+
+这样的确保可以是静态的或者是动态的。
+
+安全意味着数据完整性。
+
+### Revisiting the Basic Calculator
+
+### Making Memory Explicit (Unsafely)
+
+对值的内存申请进行显式操作。
+
+申请一个向量，数字直接赋值到向量，返回下标。字符串将其作为数字的数组进行赋值，首位赋值字符串长度。
