@@ -667,3 +667,96 @@ ref: [JavaScript 只有很少的违规](https://www.destroyallsoftware.com/talks
 对值的内存申请进行显式操作。
 
 申请一个向量，数字直接赋值到向量，返回下标。字符串将其作为数字的数组进行赋值，首位赋值字符串长度。
+
+将运算变更为都是对向量中元素的操作，我们持有的是元素的下标。
+
+此时，同一个向量地址，既可以被解释为是数字，又可以被解释为是字符串。
+
+### Recovering Safety
+
+所以关键在于记录每一个值的类型，并且在使用时进行约束。这是tag，用于表示后续的p的元数据。
+
+随后在存储变量时，将第一位存储为tag。随后在访问时会对tag进行检查，如果类型不对会抛出异常。
+
+### What Price Safety?
+
+对安全进行检查是有时间和空间的代价的。通过类型就可以避免这些代价来达到安全。
+
+### Soundness
+
+类型检查器的工作是对求值器的镜像。只需要考虑通过类型检查的程序，也就是说，只要类型检查器求出了程序的类型，那么程序的结果就是这个类型。这就是type soundness。
+
+soundness 是需要证明的。
+
+### Generic Printing
+
+拥有了tag之后，可以实现泛型的操作，比如打印。
+
+### The Representation of Numbers
+
+32位机器的值会占用4个字节。这也就意味着最后两位永远是0，所以可以利用最后两位来表征值的类型。对于数字，可以直接用剩下的三十字节来表示，这样数值就不需要占用堆区了，在栈区就够了。
+
+## Type Inference
+
+### Unannotated Programs and Types
+
+plait会根据函数的表达式推导函数的类型。
+
+这是Type Inference，类型推导。
+
+类型推导由两部分组成：
+
+- 递归的遍历所有子表达式，生成一组约束条件
+- 求解这组约束条件，类似于求多元一次方程组
+
+### Imagining a Solution
+
+基于变量被使用的情况来推导变量的类型。
+
+### Unique Variable Names
+
+对静态作用域语言来说，确认变量名是容易的。
+
+### More Informal Examples
+
+对于类型错误，需要更多的报错。
+
+### Algorithmic Details
+
+这样的算法是Hindley-Milner inference。具体内容可以参见前两个版本的书。
+
+## Algebraic Datatypes
+
+`define-type`进行类型定义进行了三个步骤
+
+- 基于新类型一个名字
+- 允许类型使用多种情况或变体进行定义
+- 允许递归的定义
+
+这就是代数数据类型。变体之间用or连接，成员之间用and连接。这也可以被称作tagged union。
+
+### Generated Bindings
+
+对于代数数据类型，如何进行确定类型。plait会自动生成检测代数数据类型和获取成员的方法。
+
+### Static Type Safety
+
+那些获取类型的方法是不安全的，对错误的类型进行调用也可以通过类型检查。
+
+### Pattern-Matching and Type-Checking
+
+可以使用模式匹配来进行处理。`type-case`。同时，模式匹配也将子表达式的类型进行了限制。
+
+模式匹配对静态处理代数数据类型，并且保持静态安全很重要。
+
+### Algebraic Datatypes and Space
+
+对于同一个代数数据类型，需要tag来区分它是哪个变体。
+
+## Union Types and Retrofitted Types
+
+向已有的语言添加类型系统是retrofitted type system。可以将一些运行时的错误转变为静态的错误。
+
+为了避免重写大量代码，类型系统必须兼容常见的类型安全的程序。
+
+
