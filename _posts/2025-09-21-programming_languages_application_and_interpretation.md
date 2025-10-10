@@ -759,4 +759,137 @@ plait会根据函数的表达式推导函数的类型。
 
 为了避免重写大量代码，类型系统必须兼容常见的类型安全的程序。
 
+### You Get a Type! And You Get a Type! And You Get a Type!
 
+之前的实现是不安全的是因为类型信息在构建之后丢失了。
+
+Typed Racket支持结构体。
+
+### Union Types
+
+利用predicates去进行类型检查。类型检查器会利用predicates来具体对应的类型。
+
+这其实和模式匹配挺像的。
+
+### If-Splitting
+
+对于else的情况也可以推导出类型，并进行缩窄。这种方式被称作`if-splitting`，因为对应的if语句可以区分union。
+
+### Introducing Union Types
+
+Union 类型对于处理部分函数很有用。
+
+ref: [Partial Domains](https://dcic-world.org/2025-02-09/partial-domains.html)
+
+如今因为可以安全的处理Union，所以可以引入Union类型。
+
+### How Many Unions?
+
+代数数据类型中，一个类只能是某一个类的变体，而不能是多个类的变体。但是Union可以让一个类属于多个Union。这带来了灵活性和复杂性。
+
+### Union Types and Space
+
+Union类型需要type-tag来记录类型。代数数据类型的tag只需要区分所有的变体即可，而Union的tag则需要标记所有类型的所有的程序。因此会占用更多的空间。
+
+### If-Splitting with Control Flow
+
+对于JavaScript。类型检查是十分复杂的。
+
+### If-Splitting with Control Flow and State
+
+类型系统的设计者需要面对的问题是，它们要么拒绝常见的程序或者增加类型系统的复杂程度来处理那些常见的程序。
+
+ref: [Typing Local Control and State Using Flow Analysis](https://cs.brown.edu/people/sk/Publications/Papers/Published/gsk-flow-typing-theory/)
+
+### The Price of Retrofitting
+
+在无类型语言中添加类型是沉重的负担，需要一些启发式的结构，而越复杂的启发式的结构在程序不能处理的情况下会变得越奇怪。
+
+### Types and Tags
+
+Type和Tag是有区别的。类型是可以嵌套的，但是Tag是给定的。
+
+## Nominal Types, Structural Types, and Subtyping
+
+用对象来表示代数数据类型。
+
+### Algebraic Datatypes Encoded With Nominal Types
+
+Java中的if-splitting是通过动态分派来完成的。和模式匹配与if-splitting接近的是，都通过某种语法模式来使程序能够静态的处理类型。
+
+一个特点是，模式匹配可以很方便的添加新的方法，而动态分配可以很方便的添加新的类型。
+
+ref： [Synthesizing Object-Oriented and Functional Design to Promote Re-Use](https://cs.brown.edu/~sk/Publications/Papers/Published/kff-synth-fp-oo/)
+
+ref: [Toward a Formal Theory of Extensible Software](https://cs.brown.edu/~sk/Publications/Papers/Published/kf-ext-sw-def/)
+
+### Nominal Types
+
+java的类是`nominal types`，类的名称是决定性的，名字不同的类无法相互替换，即使它们实现一样，有同样的接口。
+
+### Structural Types
+
+另一种不同的类型系统中，类的类型不是名字，而是它的结构和接口。这就是`structural typing`，结构化类型。
+
+ref: A Theory of Objects(Martín Abadi, Luca Cardelli)
+
+ref: [Semantics and Types for Objects with First-Class Member Names](https://cs.brown.edu/~sk/Publications/Papers/Published/pgk-sem-type-fc-member-name/)
+
+### Nominal Subtyping
+
+在java中的三元表达式的类型是两个返回值的最小上界。
+
+### Subtyping
+
+X是Y的子类，`X <: Y`，X可以被安全的替换为Y。
+
+参见PAPL。
+
+ref： [Subtyping](https://papl.cs.brown.edu/2020/objects.html#%28part._subtyping%29)
+
+## Gradual Typing
+
+### From Scripts to Programs
+
+编程语言的潮流是在动态语言中增加静态对应内容。
+
+对于已经基于动态类型的程序，无法立刻将其转换为静态类型的，因为:
+
+- 程序体量很大并且程序员的工作时间有限
+- 程序的某些部分甚至不能被静态类型处理
+
+尽管如此，现实世界的一些动态类型语言也被添加了类型系统，使用一种称作`gradual typing`的方法。
+
+### Micro Versus Macro
+
+在gradual typing中，增加类型标注，并随后进行类型检查。
+
+只对一部分确认的类型进行标注会导致代码变得复杂，变成动态和静态的混合，这使得类型检查器更加难以进行，也就是说难以得到有效的结果。
+
+另一种方法是`macro gradual typing`，静态语言和动态语言是两种相似但是不同的语言，它们共享运行时，但是类型检查只会对静态语言进行。这个的例子是Typed Racket
+
+### Typed Racket at Work
+
+通过关注报错来关注两个语言之间的传递。在将Typed Racket的函数暴露给Racket时，会额外进行封装，对参数和返回值进行类型检查。
+
+对Racket的合同系统，可以参见。
+
+ref: [Contracts](https://docs.racket-lang.org/guide/contracts.html)
+
+## Relations
+
+### A Language Genealogy
+
+Prolog程序。
+
+ref [Prolog](https://swish.swi-prolog.org/)
+
+Prolog可以通过已有的关系来推断关系。
+
+Simula开创了OOP，Smalltalk实现了一个纯面向对象语言。
+
+### Encoding Type Rules
+
+对类型规则进行编码，使用Prolog的语法。这样可以将Prolog用作类型检查器和类型计算器，以及程序合成器。
+
+环境在这种情况下是绑定关系的列表。
