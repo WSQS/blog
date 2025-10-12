@@ -893,3 +893,13 @@ Simula开创了OOP，Smalltalk实现了一个纯面向对象语言。
 对类型规则进行编码，使用Prolog的语法。这样可以将Prolog用作类型检查器和类型计算器，以及程序合成器。
 
 环境在这种情况下是绑定关系的列表。
+
+### Visualizing Prolog Execution
+
+ref: [Prolog 可视化](https://www.youtube.com/watch?v=pLcfMEQjMqM)
+
+## Generators
+
+### A Canonical Example
+
+Generator和函数是有差异的。运行会在yield处暂停，并在下一次调用时从暂停处继续。这类似于一个闭包，其中的变量都存储于闭包中。
