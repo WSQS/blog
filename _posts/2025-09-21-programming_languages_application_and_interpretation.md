@@ -903,3 +903,95 @@ ref: [Prolog 可视化](https://www.youtube.com/watch?v=pLcfMEQjMqM)
 ### A Canonical Example
 
 Generator和函数是有差异的。运行会在yield处暂停，并在下一次调用时从暂停处继续。这类似于一个闭包，其中的变量都存储于闭包中。
+
+Python的Generator是iterator的语法糖。参见:
+
+ref:[Difference between Python's Generators and Iterators](https://stackoverflow.com/questions/2776829/difference-between-pythons-generators-and-iterators)
+
+ref:[Python: The Full Monty: A Tested Semantics for the Python Programming Language](https://cs.brown.edu/~sk/Publications/Papers/Published/pmmwplck-python-full-monty/)
+
+### Translating to SMoL
+
+可以理解成，每一个Generator实例都有它自己的局部栈。
+
+### A Richer Example
+
+## Laziness
+
+### Evaluation Strategies
+
+SMoL是立即求值的，另一种选项是惰性求值。
+
+### Why Lazy Evaluation
+
+- 节省时间，只对必要的数值进行计算，忽略不需要的计算。
+- 允许我们通过函数添加一些非惰性求值的结构，类似if。但是在立即求值的语言中，可以通过宏来实现。
+- 惰性求值对等价替换表达式更加的宽松，允许编译器进行更多的优化。这种等价替换规则是`Eta rule`。引用透明性(Referential Transparency)指两个相同的表达式进行替换。
+- 创建潜在的无限的数据结构
+- 惰性求值可以促进模块化
+
+ref: [Why Functional Programming Matters](https://www.cse.chalmers.se/~rjmh/Papers/whyfp.html)
+
+### Strictness Points
+
+惰性编程的语言需要定义`strictness points`，在这个点表达式必须被计算和产生一个答案。
+
+`strictness point`的选择不同会让语言表现得不同。通常会选择这些点:
+
+- 条件判断的条件表达式
+- 代数运算
+- 打印的时刻
+
+### Evaluating Without Substitution
+
+函数替换是对惰性求值的一种理解，但是这并不是实现。
+
+传递表达式会导致动态作用域。所以需要传递的是表达式和Environment。表达式和Environment的结合其实也就是闭包，一个无参的闭包。
+
+### Laziness Via Closures: Beyond Numbers
+
+### Tracing Laziness
+
+### Laziness and Side-Effects
+
+惰性求值的问题是更加难以预测程序基于状态的变化。对于程序员来说，不止需要关心接口，还需要关心接口内部的实现。
+
+### Caching Results
+
+对于表达式，因为是纯函数，所以可以通过缓存结果来加速。
+
+ref: [Avoiding Recomputation by Remembering Answers](https://dcic-world.org/2025-02-09/avoid-recomp.html)
+
+这对应的有两种实现方式，一种是完成运算之后保存，在下一次运算时使用结果来加速。另一种是运行时动态进行判断的，这更加困难，但是会带来更多的性能提升。
+
+### Space Consumption
+
+惰性求值依赖闭包，所以会带来大量的额外内存开销。
+
+### Laziness in Eagerness
+
+对于立即求值的语言，可以用thunk模拟惰性求值。
+
+## Control on the Web
+
+### Server-Side Programming
+
+网络调用是异步的。
+
+#### Recording Contexts
+
+因此网络调用的数据需要从Context中存储和恢复。
+
+#### Simulating in the Stacker
+
+### Client-Side Termination
+
+JavaScript在浏览器中运行时为了避免阻塞线程，可以调用`requestAnimationFrame(C)`，来将线程控制权交还给浏览器，并后续执行回调C。
+
+### Abstracting the Problem
+
+服务端侧和客户端侧的需求是一致的，都需要程序员收到记录需要保持的信息，将计算交还给调用者，当恢复时，从存储中取回信息，所有的代码都需要运行嘚如同中断没有发生过一样。
+
+编程语言的历史中有很多任务由程序员手动完成直到创造对应的语言结构，并由编译器来自动做这些任务。
+
+#### Using Closures
