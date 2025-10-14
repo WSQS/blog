@@ -5,6 +5,7 @@ url: https://www.plai.org
 tags:
   - algorithm
   - compile
+  - programming language theory
 ---
 
 ## Preface
@@ -995,3 +996,117 @@ JavaScript在浏览器中运行时为了避免阻塞线程，可以调用`reques
 编程语言的历史中有很多任务由程序员手动完成直到创造对应的语言结构，并由编译器来自动做这些任务。
 
 #### Using Closures
+
+用闭包来表现栈。
+
+术语: continuation，表示整个后续计算的函数。通常用字母k表示。
+
+术语: inversion of control, 闭包的数据结构中第一个进行的运算在最外侧。
+
+#### Using Racket
+
+Racket本身支持处理continuation。`let/cc`将continuation值存储到变量中。通过这种方式可以把inversion of control再颠倒回来。
+
+另一种语法机制:
+
+ref: [Non-SMoL: Reactivity](https://docs.google.com/document/d/1ECyFV88K-jU-i0qHLfUNjbIYthChzpcjZ0eiostD3d8/edit#)
+
+### Yielding on a Web Server
+
+Racket使用`#lang web-server/insta`进行服务器端网页开发。
+
+在网页中，存在Web表单，用户会通过url提交表单。可以将当前栈的状态存储到URL中。
+
+### Interaction with State
+
+### Web Interactions
+
+并发是程序特点。
+
+因为在网页开发中，栈区数据都存储在url中，所以可以进行复制和替换。用户也确实可以打开多个网页。
+
+### Returning to the Counters
+
+Stateful的计数器会因为并发而在单个页面出现状态的不一致。而函数式的计数器因为栈数据都存在于URL中，所以并发中的单个页面也是一致的。
+
+### Mapping between Web and Programming Language Features
+
+将数据存储在url中，可以将这部分数据视为是一个Environment，页面和这部分数据组成了一个闭包。对应的，网页中共享的变量(Cookie)则是堆内存。
+
+### Readings
+
+ref: [Automatically Restructuring Programs for the Web](https://cs.brown.edu/~sk/Publications/Papers/Published/mfgkf-web-restructuring-cps-journal/)
+
+ref: [Modeling Web Interactions and Errors](https://cs.brown.edu/~sk/Publications/Papers/Published/kfgf-model-web-inter-error/)
+
+ref: [Implementation and Use of the PLT Scheme Web Server](https://cs.brown.edu/~sk/Publications/Papers/Published/khmgpf-impl-use-plt-web-server-journal/)
+
+ref: [Putting in All the Stops: Execution Control for JavaScript](https://cs.brown.edu/~sk/Publications/Papers/Published/bnpkg-stopify/)
+
+## Reactivity
+
+与SMoL不同的是，代码中一次函数调用实际上发生很多次。
+
+### GUIs through Callbacks
+
+### Reactivity
+
+另一种方案是`functional-reactive programming`，FRP。
+
+向Timer注册回调会导致invert control。
+
+`seconds`是一个随时间变化的值。
+
+### How Evaluation Works
+
+#### Dataflow Graphs
+
+要是参数是一个随时间变化的值，FrTime会创建数据流图。FrTime通过数据流图来自动进行invert control，这给予了用户随时间变化的值和普通的值一样的开发体验。
+
+#### Rewriting Application
+
+`tvv%`类型。
+
+#### Non-Linear Graphs
+
+数据流图可以是非线性的。可以分叉。
+
+#### Avoiding Glitches
+
+在数据流中，运算的顺序可能并不如我们预期的，存在glitches。所以需要在拓扑学的意义上进行求值。
+
+### Other Time-Varying Values
+
+`mouse-pos`也是个随时间变化的变量。
+
+### Even More Time-Varying Values
+
+ref: [Embedding Dynamic Dataflow in a Call-by-Value Language](https://cs.brown.edu/~sk/Publications/Papers/Published/ck-frtime/)
+
+ref: [Flapjax: A Programming Language for Ajax Applications](https://cs.brown.edu/~sk/Publications/Papers/Published/mgbcgbk-flapjax/)
+
+### Returning to Our Timer
+
+#### Elapsed Time Without Resetting
+
+使用`FrTime`实现计时器。
+
+`value-now`获取值的切片。
+
+#### Adding Resets
+
+更多的关于编程语言理论的书。
+
+ref: [Crossing State Lines: Adapting Object-Oriented Frameworks to Functional Reactive Languages](https://cs.brown.edu/~sk/Publications/Papers/Published/ick-adapt-oo-fwk-frp/)
+
+## What’s Next?
+
+ref: [Semantics Engineering with PLT Redex](https://mitpress.mit.edu/9780262062756/semantics-engineering-with-plt-redex/)
+
+ref: [Practical Foundations for Programming Languages](https://www.cambridge.org/us/academic/subjects/computer-science/programming-languages-and-applied-logic/practical-foundations-programming-languages-2nd-edition?format=HB&isbn=9781107150300)
+
+ref: [Types and Programming Languages](https://mitpress.mit.edu/9780262162098/types-and-programming-languages/)
+
+技术会议: BOBkonf, !!Con (BangBangCon), Curry On, Papers We Love, StrangeLoop。
+
+ref: [推荐会议的推文](https://x.com/ShriramKMurthi/status/1600574419914854400)
