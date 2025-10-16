@@ -6,6 +6,8 @@ tags:
   - algorithm
   - compile
   - programming language theory
+  - Shriram Krishnamurthi
+  - scheme
 ---
 
 ## Preface
