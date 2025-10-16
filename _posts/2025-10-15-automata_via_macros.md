@@ -5,8 +5,8 @@ url: https://cs.brown.edu/~sk/Publications/Papers/Published/sk-automata-macros/
 tags:
   - compile
   - scheme
-  - programming language theory
-  - Shriram Krishnamurthi
+  - programming_language_theory
+  - Shriram_Krishnamurthi
 ---
 
 ## Introduction

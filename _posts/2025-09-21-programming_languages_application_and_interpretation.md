@@ -5,8 +5,8 @@ url: https://www.plai.org
 tags:
   - algorithm
   - compile
-  - programming language theory
-  - Shriram Krishnamurthi
+  - programming_language_theory
+  - Shriram_Krishnamurthi
   - scheme
 ---
 
