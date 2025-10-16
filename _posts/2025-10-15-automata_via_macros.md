@@ -65,3 +65,37 @@ ref: [The Scheme Programming Language Second Edition](https://www.scheme.com/tsp
 第二种方式有两个未解决的问题，效率和准确性，前者和函数调用的成本有关，而后者在自动机变得愈发复杂时变得难以保证。这是需要的是一个真正的编译器生成编译结果，这就是宏的表现。
 
 ### Concision
+
+自动机的表现方式是独立的多条规则，需要将这些规则转换为相互递归的整体。
+
+使用宏中的变长表示`...`可以做到这一点。
+
+Scheme的宏是一个`lightweight compiler API`。
+
+### Efficiency
+
+函数调用的成本。
+
+`Pointers are like jumps`，解引用则和尾调用类似。
+
+尾调用不需要消耗栈空间。可以通过累加器风格将代码改为尾递归，也就是增加一个参数。另一种更通用的风格是CPS(continuation-passing style)，函数只是将结果传递给另一个函数。
+
+### Fixing a Flaw
+
+当前的实现中，只要输入走完了就会接受，但是可能结束的状态是异常的。
+
+所以对结束状态通过accept进行显式声明，并在宏中进行模式匹配。
+
+### Tail Calls versus Tail Recursion
+
+区分尾调用和尾递归。因为尾递归优化，函数式编程中，尾递归实现循环和直接for循环性能差不多。
+
+尾调用优化同样也很重要。
+
+ref: [How to Design Programs](https://htdp.org/)
+
+### Perspective
+
+尾调用和宏是有紧密关系的。
+
+宏能够让程序员关注问题本身而不是实现细节。
