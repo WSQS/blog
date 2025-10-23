@@ -427,7 +427,7 @@ racket语法中使用`.`来表示绑定后续所有参数到一个值中。`appl
 
 Smalltalk的创建者Alan Key认为OOP的理想是找到一个比赋值更为灵活的方案，甚至更进一步直接把赋值给消除掉。
 
-ref: [The Early History Of Smalltalk](http://worrydream.com/EarlyHistoryOfSmalltalk/)
+ref: [The Early History Of Smalltalk](http://worrydream.com/EarlyHistoryOfSmalltalk/) [note](./2025-10-16-early_history_of_smalltalk.md)
 
 使用`set!`来对变量进行操作。
 
