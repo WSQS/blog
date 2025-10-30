@@ -102,3 +102,37 @@ A type system is a tractable syntactic method for proving the absence of certain
 数据库。
 
 计算语言学。
+
+### Type Systems and Language Design
+
+向一个不包含类型系统的语言嵌入类型是复杂的。类型系统是语言设计的核心。
+
+### Capsule History
+
+### Related Reading
+
+## Mathematical Preliminaries
+
+必要时来查阅。
+
+### Sets, Relations, and Functions
+
+## Untyped Arithmetic Expressions
+
+### Introduction
+
+BNF语法格式。
+
+`metavariable`占位符。
+
+括号是为了一致性。
+
+### Syntax
+
+格式：归纳定义。
+
+格式：推导规则。
+
+格式：具体规则
+
+前两个视角描述了集合是满足给定封闭性性质的最小集合，是一种归纳定义。第三种视角描述了集合是如何构造出来的。
