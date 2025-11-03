@@ -172,3 +172,97 @@ normal form：不能再应用求值关系的表达式。
 一个表达式存在normal form。
 
 增加代数的运算语义。
+
+stuck: 是normal form但是却不是value。其实也就是运行时异常。
+
+定义异常的值来给出更明确的报错，这和正常求值的逻辑是一致的。
+
+### Notes
+
+## An ML Implementation of Arithmetic Expressions
+
+基于OCaml实现。
+
+### Syntax
+
+ast的节点开头包含一个info，描述了节点的来源。
+
+`rec`关键字说明函数调用是递归的。
+
+### Evaluation
+
+对于无法使用求值规则的情况，抛出异常。
+
+对变量的类型进行更严格的限制。
+
+### The Rest of the Story
+
+对AST求值只是编译器的一个步骤。
+
+## The Untyped Lambda-Calculus
+
+语言可以拆分成核心和语法糖。
+
+lambda-calculus可以作为核心语言，只包含函数定义和函数应用。类似的还有pi-calculus和object-calculus。这些运算可以互相迁移。
+
+丰富lambda-calculus，对各种特性增加语法糖，增加复杂的特性。对核心语言的拓展通常也会涉及类型系统的拓展。
+
+### Basics
+
+计算或函数抽象是所有编程语言的本质核心特性。
+
+函数求值的直接理解是函数替换。
+
+lambda-calculus只有三种语法，变量、函数声明和函数应用。
+
+#### Abstract and Concrete Syntax
+
+两层语法结构：准确语法和抽象语法。
+
+从准确语法转换为抽象语法可以通过lexer和parser。
+
+#### Variables and Metavariables
+
+#### Scope
+
+绑定变量，函数的形参，自由变量，函数形参之外的变量。
+
+无自由变量的表达式封闭表达式，或组合子(combinators),不依赖外部变量的函数。
+
+#### Operational Semantics
+
+纯粹的lambda-calculus的计算就只是将函数应用于参数。也就是将所有形参的自由变量都替换为实参。
+
+$(\lambda x. t_{12})t_2$被称作可约式(reducible expression ,redex)重写redex的规则是beta-reduction。
+
+求值策略。
+
+- `full beta-reduction`: 所有redex都可以被先求值
+- `normal order strategy`: 最左侧最外侧的redex被先求值，求值过程是确定的
+- `call by name strategy`: 与`normal order strategy`类似，但是不能直接化简函数中的内容，Haskell采用变体`call by need`
+- `call by value strategy`: 只有最外侧的redex可以被先求值，只有redex的参数是值了才能被求值。
+
+求值策略对类型系统影响较小。
+
+### Programming in the Lambda-Calculus
+
+#### Multiple Arguments
+
+通过柯里化，来通过单参数函数实现多参数函数
+
+#### Church Booleans
+
+`tru`和`fls`的定义:
+
+$$
+tru = \lambda t. \lambda f. t;\\
+fls = \lambda t. \lambda f. f;
+$$
+
+#### Pairs
+
+基于布尔值，可以实现pair。
+
+#### Church Numerals
+
+数字是0的后继。表示一个函数执行多次某个操作。
