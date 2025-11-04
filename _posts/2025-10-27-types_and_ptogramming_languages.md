@@ -205,6 +205,8 @@ ast的节点开头包含一个info，描述了节点的来源。
 
 lambda-calculus可以作为核心语言，只包含函数定义和函数应用。类似的还有pi-calculus和object-calculus。这些运算可以互相迁移。
 
+ref: [Church, Alonzo. The Calculi of Lambda Conversion. Princeton University Press, 1941.](https://archive.org/details/the-calculi-of-lambda-conversion-couverture-alonzo-church-princeton-university-p)
+
 丰富lambda-calculus，对各种特性增加语法糖，增加复杂的特性。对核心语言的拓展通常也会涉及类型系统的拓展。
 
 ### Basics
@@ -266,3 +268,45 @@ $$
 #### Church Numerals
 
 数字是0的后继。表示一个函数执行多次某个操作。
+
+$scc = \lambda_n. \lambda_s.\lambda_z. s (n\ s\ z);$
+
+$plus = \lambda_m.\lambda_n.\lambda_s.\lambda_z.m\ s(n\ s\ z);$
+
+$times = \lambda_m.\lambda_n.m(plus\ n) c_0;$
+
+$iszro = \lambda_m.m(\lambda_x.fls) tru;$
+
+$$
+zz = pair\ c_0\ c_0;\\
+ss = \lambda_p.pair(snd\ p)(plus c_1(snd p));
+prd = \lambda_m.fst(m\ ss\ zz);
+$$
+
+$nil = \lambda c.\lambda n. n$
+
+$cons = \lambda h.\lambda t.\lambda c.\lambda n. c\ h(t\ c\ n);$
+
+$isnil = \lambda t. t (\lambda x.\lambda y.fls) tru;$
+
+$head = \lambda t. t (\lambda x.\lambda y.x) nil;$
+
+#### Enriching the Calculus
+
+$\lambda$NB加入代数和布尔表达式的lambda-calculus。
+
+$\lambda$NB中对代数和布尔都存在两种实现，可以相互转换。
+
+Church encoding的问题是因为`call by value strategy`,代数运算的求值会被延迟，而原始类型则没有这个问题。
+
+#### Recursion
+
+有的表达式不是normal形式，但是无法被求值为normal形式，而是一直递归，这是`diverge`。
+
+`fixed-point combinator`实现递归函数$fix = \lambda f.(\lambda x.f(\lambda y. x\ x\ y))(\lambda x.f(\lambda y.x\ x\ y));$
+
+#### Representation
+
+Church数表示了原始数吗？Church数和真实的数没有可以被观测到的差异。
+
+### Formalities
