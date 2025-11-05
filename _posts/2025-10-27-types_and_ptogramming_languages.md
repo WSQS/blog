@@ -310,3 +310,29 @@ Church encoding的问题是因为`call by value strategy`,代数运算的求值�
 Church数表示了原始数吗？Church数和真实的数没有可以被观测到的差异。
 
 ### Formalities
+
+只关注lambda-calculus。
+
+#### Syntax
+
+term的三种组成，本身是变量，是函数声明，是函数应用。
+
+#### Substitution
+
+替换的两种定义。一种更为直观一种对特定的ML实现更为方便。
+
+区分自由变量和绑定变量。
+
+静态作用域。需要进行`capture-avoiding substitution`。对于重名的情况，应该进行`alpha-conversion`，对绑定变量进行重命名。
+
+绑定变量重命名的语句是一致的。
+
+#### Operational Semantics
+
+计算顺序。
+
+### Notes
+
+ref: [Böhm, Corrado and Alessandro Berarducci. Automatic synthesis of typed Λ-programs on term algebras. Theoretical Computer Science, 39(2–3):135–154, August 1985.](https://www.sciencedirect.com/science/article/pii/0304397585901355)
+
+## Nameless Representation of Terms
