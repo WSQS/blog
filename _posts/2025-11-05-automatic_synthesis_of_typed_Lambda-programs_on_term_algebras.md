@@ -32,3 +32,7 @@ Curry–Howard同构意味着类型与逻辑之间的一致性。
 ### Data systems and data structures
 
 data system: 没有载体既包含参数，又包含非参数，并且只有有限的载体和基础预算的代数。其中的载体被称作数据结构，数据结构也有参数的和非参数的。
+
+data system是完全由参数数据结构和语言的同构决定的。
+
+### Examples: natural numbers, lists, trees and forests
