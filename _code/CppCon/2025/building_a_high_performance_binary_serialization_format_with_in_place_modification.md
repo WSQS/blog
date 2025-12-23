@@ -83,3 +83,47 @@ Idea 3: Use branchless binary search.
 Doing only one assignment in the if statement.
 
 ref: Array Layouts for Comparison-Based Searching
+
+ref: [Performance comparison: linear search vs binary search](https://dirtyhandscoding.github.io/posts/performance-comparison-linear-search-vs-binary-search.html)
+
+## Faster Modification
+
+Moving element is a problem.
+
+Idea 1: Move items "out-of-line" of their containing object.
+
+Offsets can point anywhere else in th buffer. Nesting is expressed by maps pointing to other maps.
+
+Idea 2: Implement a bump allocator.
+
+Idea 3: Implement a free-list allocator.
+
+Idea 4: Prefetch free-list entries while iterating.
+
+## Final Benchmarks
+
+## Limitations
+
+Fragmentation is a problem with first-fit.
+
+## Conclusions
+
+Improve performance:
+
+- Create highly parameterized benchmarks
+- Profile
+- Make algorithmic/data structure improvements
+- Explore vectorization, branchless code, prefetching
+
+## Futrure Work
+
+- Compact
+- Offset-free serialization
+
+ref: Algorithms for Mordern Hardware by Sergey Slotin
+
+ref: The Garbage Collection Handbook
+
+ref: Going Nowhere Faster in CppCon 2017
+
+ref: Performance and Efficiency in C++ by Fedor Pikus
