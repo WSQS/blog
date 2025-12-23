@@ -30,4 +30,8 @@ Font Engine:用于将TTF转换成栅格图像。
 - grid-fitted
 - 扫描为位图
 
-### Scaling the master outline
+#### Scaling the master outline
+
+单位转换从em转换到26.6 fixed point numbers。
+
+pointSize * resolution / (72 points per inch * units_per_em)
