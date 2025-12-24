@@ -8,6 +8,8 @@ tags:
 
 Declarative: what should be done
 
+ref: Artist David Szilagyi
+
 Refactoring: Modifying a program's implementation
 
 for the Masses: Usable by any C++ engineer
