@@ -57,3 +57,23 @@ Pain points:
   - Standard library details matter
 
 ## Vibe Tidying
+
+Disappointed
+
+Annotate regular C++ code with refactoring intent.
+
+- Inlining functions
+- Inlining functions to Rename a function
+- Inlining functions to Remove default arguments
+- Inlining counstructors
+- Inline all the things
+
+## Refactoring complexity
+
+Seperate network complexity from local complexity.
+
+## Pattern matching
+
+- Modifying declarations
+
+ref: coccinelle similar tools
