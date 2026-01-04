@@ -336,3 +336,13 @@ term的三种组成，本身是变量，是函数声明，是函数应用。
 ref: [Böhm, Corrado and Alessandro Berarducci. Automatic synthesis of typed Λ-programs on term algebras. Theoretical Computer Science, 39(2–3):135–154, August 1985.](https://www.sciencedirect.com/science/article/pii/0304397585901355)
 
 ## Nameless Representation of Terms
+
+变量的表示。
+
+- 符号表示（依赖Barendregt convention）
+- 显式替换（explicit substitutions）
+- combinatory logic可以完全不需要变量
+
+这些都是基于风格和性能的可选项。
+
+本书基于索引来定位变量。
