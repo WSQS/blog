@@ -49,11 +49,14 @@ tags:
 
 Coding Agent 的流行和普遍采用已经是公认的事实，不会再有人质疑这个东西是否有效，需要考虑的是这个东西效用的尺度。
 
-Coding Agent 的核心能力是对任务进行分解。
+Coding Agent 的核心能力是对任务进行分解，并按照步骤完成任务，最终可以通过工具来执行指令进行验证，并根据验证的结果进行反思和下一步的迭代。
+
+在这里涉及到了一个核心架构[ReAct][2]。ReAct 尝试处理[CoT(Chain-of-Thought)][3]当中模型的幻觉。在这里需要先理清楚一个问题，正如[ReAct][2]第一章最后一段所展示的，ReAct本身是一种`prompt-based paradigm`，但是只通过 Prompt 进行设定在推理和行动方面的表现并不理想，[ReAct][2]的实验表明[ReAct][2]的真正潜力需要通过训练和微调才能释放。这实际上是一种范式实现的范式，先通过 Prompt 或者简易的微调来证明其有效性，随后这样的范式会逐步下沉到模型训练乃至调用接口中去。例如对于[ReAct][2]这个范式，它在调用接口层面的一种实现就是 OpenAI 的 Function Calling 接口。
 
 ### Claw
 
 ## 工作
 
 [1]: https://b23.tv/cI14l4f "阳和平表哥Hinton是披着后现代外衣的机械唯物论者？"
-
+[2]: https://react-lm.github.io "ReAct: Synergizing Reasoning and Acting in Language Models"
+[3]: https://arxiv.org/abs/2201.11903 "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
