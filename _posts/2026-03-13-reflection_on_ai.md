@@ -53,7 +53,7 @@ tags:
 
 ### ReAct
 
-ReAct 尝试处理[CoT(Chain-of-Thought)][2]当中模型的幻觉。在这里需要先理清楚一个问题，正如[ReAct][3]第一章最后一段所展示的，ReAct本身是一种`prompt-based paradigm`，但是只通过 Prompt 进行设定在推理和行动方面的表现并不理想，[ReAct][3]的实验表明[ReAct][3]的真正潜力需要通过训练和微调才能释放。这实际上是一种范式实现的范式，先通过 Prompt 或者简易的微调来证明其有效性，随后这样的范式会逐步下沉到模型训练乃至调用接口中去。例如对于[ReAct][3]这个范式，它在调用接口层面的一种实现就是 OpenAI 的 Function Calling 接口。
+[ReAct][3]尝试处理[CoT(Chain-of-Thought)][2]当中模型的幻觉。在这里需要先理清楚一个问题，正如[ReAct][3]第一章最后一段所展示的，ReAct本身是一种`prompt-based paradigm`，但是只通过 Prompt 进行设定在推理和行动方面的表现并不理想，[ReAct][3]的实验表明 ReAct 的真正潜力需要通过训练和微调才能释放。这实际上是一种范式实现的范式，先通过 Prompt 或者简易的微调来证明其有效性，随后这样的范式会逐步下沉到模型训练乃至调用接口中去。例如对于 ReAct 这个范式，它在调用接口层面的一种实现就是 OpenAI 的 Function Calling 接口。
 
 ## 应用
 
