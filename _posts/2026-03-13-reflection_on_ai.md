@@ -35,9 +35,13 @@ tags:
 
 ## 神经网络架构
 
-无论是CNN、RNN、LSTM 还是 Transformer 架构，它们尝试做的事情都是构建预测模型，并根据输入进行采样。
+无论是CNN、RNN、LSTM 还是[Transformer][5]架构，它们尝试做的事情都是构建预测模型，并根据输入进行采样。
 
-它们之间的差异在于对数据的不同假定， CNN 假定的是数据之间存在空间相关性， RNN 和 LSTM 假定的是数据之间存在时间相关性，Transformer 弱化了这样的假定，留到训练时自发地构建相关性。语言本身作为序列自然会存在时间相关性，但是语言本身的指涉性就意味着语言还有超出相关性的部分。在真实的场景中确实会出现跨越很长一段文本来进行指涉的情况。Transformer 并没有实际上解决这个问题，而只是让这样的情况也变成可学习的了。因此为了能够让 LLM 学到长上下文中的指涉，需要的是长上下文指涉的文本。
+它们之间的差异在于对数据的不同假定， CNN 假定的是数据之间存在空间相关性， RNN 和 LSTM 假定的是数据之间存在时间相关性，Transformer 弱化了这样的假定，留到训练时自发地构建相关性。
+
+在这里需要涉及到一个 Transformer 架构的一个重要但是常常会被忽略的概念，位置编码。位置编码的意义在于 Transforer 架构为了将注意力机制彻底的普遍化，将已有的架构所包含的时间空间相关性去除，并引入了位置编码作为替代。
+
+语言本身作为序列自然会存在时间相关性，但是语言本身的指涉性就意味着语言还有超出相关性的部分。在真实的场景中确实会出现跨越很长一段文本来进行指涉的情况。Transformer 并没有实际上解决这个问题，而只是让这样的情况也变成可学习的了。因此为了能够让 LLM 学到长上下文中的指涉，需要的是长上下文指涉的文本。
 
 在这里我注意到的是，如果将时间相关性与历时性建立起关联，那么对应的还有共时性的维度。或者说，人在阅读文本时并不只是通过序列化的结构去进行理解的。又或者说，因为因为句子的意义并不会随着它所在的位置而变化，注意力的权重按这样的推理来说是不应该受到位置信息的影响的，而这是 Transformer 无法做到的。也可以说，Transformer 在假定层面规定的太少了。
 
@@ -74,3 +78,4 @@ Coding Agent的核心架构[ReAct][3]。
 [3]: https://react-lm.github.io "ReAct: Synergizing Reasoning and Acting in Language Models"
 [4]: https://arxiv.org/abs/2512.24601 "Recursive Language Models"
 [5]: https://arxiv.org/abs/1706.03762 "Attention Is All You Need"
+[6]: https://jalammar.github.io/illustrated-transformer/ "The Illustrated Transformer"
