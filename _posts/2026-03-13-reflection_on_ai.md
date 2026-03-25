@@ -73,3 +73,4 @@ Coding Agent的核心架构[ReAct][3]。
 [2]: https://arxiv.org/abs/2201.11903 "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
 [3]: https://react-lm.github.io "ReAct: Synergizing Reasoning and Acting in Language Models"
 [4]: https://arxiv.org/abs/2512.24601 "Recursive Language Models"
+[5]: https://arxiv.org/abs/1706.03762 "Attention Is All You Need"
