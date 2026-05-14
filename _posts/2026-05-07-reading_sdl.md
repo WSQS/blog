@@ -70,7 +70,10 @@ typedef struct VideoBootStrap
 
 Windows 平台的`VideoBootStrap`实例是`WINDOWS_bootstrap`。
 
-所以 Windows 平台的`CreateSDLWindow`对应的实现是`WIN_CreateWindow`。
+|     SDL_VideoDevice     |           Windows           |
+| :---------------------: | :-------------------------: |
+|     CreateSDLWindow     |      WIN_CreateWindow       |
+| CreateWindowFramebuffer | WIN_CreateWindowFramebuffer |
 
 #### WIN_CreateWindow
 
@@ -79,9 +82,41 @@ Windows 平台的`VideoBootStrap`实例是`WINDOWS_bootstrap`。
 ```mermaid
 graph TD
     WIN_CreateWindow --> CreateWindowEx
+    WIN_CreateWindow --> SetupWindowData
+    SetupWindowData --> GetDC
 ```
 
-`WIN_CreateWindow`中首先会判断是基于已有窗口，还是创建新窗口。
+- `WIN_CreateWindow`: 首先会判断是基于已有窗口，还是调用`CreateWindowEx`创建新窗口。
+- `SetupWindowData`: 创建并初始化`SDL_WindowData`对象，并保存为`window->internal`。
+  - 调用`GetDC`通过`hwnd`来获得`hdc`
+    - `hwnd`(Handle to WiNDow)
+    - `hdc`(Handle to Device Context)
+    - [参考文档](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getdc)
+
+#### WIN_CreateWindowFramebuffer
+
+调用链：
+
+```mermaid
+graph TD
+    WIN_CreateWindowFramebuffer --> SDL_GetWindowSizeInPixels
+    WIN_CreateWindowFramebuffer --> GetDIBits
+    WIN_CreateWindowFramebuffer --> SDL_GetPixelFormatForMasks
+    WIN_CreateWindowFramebuffer --> CreateCompatibleDC
+    WIN_CreateWindowFramebuffer --> CreateDIBSection
+    WIN_CreateWindowFramebuffer --> SelectObject
+```
+
+- `WIN_CreateWindowFramebuffer`: 对传入的窗口，返回窗口像素格式、像素内存指针、每行的字节数。
+  - 调用`SDL_GetWindowSizeInPixels`获取窗口的像素尺寸
+  - 准备`LPBITMAPINFO`对象
+  - 调用`GetDIBits`两次获取像素格式信息
+  - 对带有颜色掩码的情况，调用`SDL_GetPixelFormatForMasks`来获取像素格式
+  - 否则就根据是否有Alpha通道，强行设定为`SDL_PIXELFORMAT_BGRA32`或`SDL_PIXELFORMAT_XRGB8888`
+  - 设定`LPBITMAPINFO`对象当中的尺寸信息
+  - 调用`CreateCompatibleDC`基于`hdc`来创建一个适配的`hdc`，也就是内存`hdc`，`mdc`
+  - 调用`CreateDIBSection`基于`hdc`创建DBI(Device Independent Bitmap)设备无关位图，得到`hbm`
+  - 调用`SelectObject`来将`mdc`和`hbm`建立关联，基于`mdc`的操作会写入到`hbm`当中。
 
 ### SDL_CreateRendererWithProperties
 
@@ -120,11 +155,22 @@ graph TD
     SW_CreateRenderer --> SDL_GetWindowSurface
     SW_CreateRenderer --> SW_CreateRendererForSurface
     SDL_GetWindowSurface --> SDL_CreateWindowFramebuffer
+    SDL_CreateWindowFramebuffer --> ShouldAttemptTextureFramebuffer
     SDL_CreateWindowFramebuffer --> SDL_GetWindowSizeInPixels
     SDL_CreateWindowFramebuffer --> SDL_CreateWindowTexture
+    SDL_CreateWindowFramebuffer --> CreateWindowFramebuffer["_this->CreateWindowFramebuffer"]
+    SDL_CreateWindowFramebuffer --> SDL_CreateSurfaceFrom
     SDL_CreateWindowTexture --> SDL_GetWindowProperties
+    SDL_CreateSurfaceFrom --> SDL_InitializeSurface
+    SDL_InitializeSurface --> SDL_GetPixelFormatDetails
+    SW_CreateRendererForSurface --> SDL_SetupRendererColorspace
 ```
 
-- `SDL_CreateWindowTexture`:
+- `SDL_CreateWindowFramebuffer`:
+  - 根据`ShouldAttemptTextureFramebuffer`判断是否可以进行硬件加速。如果支持，那么会根据尝试调用`SDL_CreateWindowTexture`或者装载对应的函数指针到`_this`中去。
+  - 对未创建`FrameBuffer`的情况，会调用`_this->CreateWindowFramebuffer`
+  - 最终调用`SDL_CreateSurfaceFrom`来创建`surface`。
+- `SDL_InitializeSurface`: 对传入的`SDL_Surface`对象进行初始化。
+- `SW_CreateRendererForSurface`: 初始化Render参数和函数指针。
 
 ## Properties
