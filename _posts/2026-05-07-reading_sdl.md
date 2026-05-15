@@ -7,6 +7,21 @@ tags:
 
 基于的 SDL 源码分支: [3.4.4](https://github.com/WSQS/SDL/tree/feat/doc-3.4.4)
 
+## Main
+
+SDL提供宏`SDL_MAIN_USE_CALLBACKS`来支持以回调函数的方式运行。SDL当中暴露的回调接口是：
+
+```c
+SDL_AppInit(void **appstate, int argc, char *argv[]);
+SDL_AppIterate(void *appstate);
+SDL_AppEvent(void *appstate, SDL_Event *event);
+SDL_AppQuit(void *appstate, SDL_AppResult result);
+```
+
+在`SDL_main.h`末尾会通过宏检查来判断是否要引入文件`SDL_main_impl.h`。
+
+`SDL_main_impl.h`当中会基于宏来添加对应平台的入口，入口函数会并调用函数`SDL_RunApp`。`SDL_RunApp`在`src/main`下有不同平台的实现，最终会调用`SDL_CallMainFunction`。
+
 ## Window
 
 暴露给用户的入口函数`SDL_CreateWindowAndRenderer`。
