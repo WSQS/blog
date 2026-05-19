@@ -13,7 +13,7 @@ tags:
 
 这部分功能对用户的入口是`include/SDL3/SDL_main.h`。
 
-|         Marco          |                     Meaning                      |
+|         Macro          |                     Meaning                      |
 | :--------------------: | :----------------------------------------------: |
 |    SDL_MAIN_HANDLED    |             是否提供自定义的平台入口             |
 | SDL_MAIN_USE_CALLBACKS | 是使用`main`函数作为入口还是使用回调函数作为入口 |
@@ -21,10 +21,10 @@ tags:
 SDL当中暴露的回调接口是：
 
 ```c
-SDL_AppInit(void **appstate, int argc, char *argv[]);
-SDL_AppIterate(void *appstate);
-SDL_AppEvent(void *appstate, SDL_Event *event);
-SDL_AppQuit(void *appstate, SDL_AppResult result);
+SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]);
+SDL_AppResult SDL_AppIterate(void *appstate);
+SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event);
+void SDL_AppQuit(void *appstate, SDL_AppResult result);
 ```
 
 在`include/SDL3/SDL_main.h`末尾会通过宏检查来判断是否要引入文件`include/SDL3/SDL_main_impl.h`。
