@@ -9,7 +9,16 @@ tags:
 
 ## Main
 
-SDL提供宏`SDL_MAIN_USE_CALLBACKS`来支持以回调函数的方式运行。SDL当中暴露的回调接口是：
+因为SDL本身的设计是一个跨平台的多媒体库，为了方便用户写出跨平台的代码，对于平台入口，SDL进行了抽象并暴露一个统一的入口。
+
+这部分功能对用户的入口是`include/SDL3/SDL_main.h`。
+
+|         Marco          |                     Meaning                      |
+| :--------------------: | :----------------------------------------------: |
+|    SDL_MAIN_HANDLED    |             是否提供自定义的平台入口             |
+| SDL_MAIN_USE_CALLBACKS | 是使用`main`函数作为入口还是使用回调函数作为入口 |
+
+SDL当中暴露的回调接口是：
 
 ```c
 SDL_AppInit(void **appstate, int argc, char *argv[]);
@@ -18,9 +27,47 @@ SDL_AppEvent(void *appstate, SDL_Event *event);
 SDL_AppQuit(void *appstate, SDL_AppResult result);
 ```
 
-在`SDL_main.h`末尾会通过宏检查来判断是否要引入文件`SDL_main_impl.h`。
+在`include/SDL3/SDL_main.h`末尾会通过宏检查来判断是否要引入文件`include/SDL3/SDL_main_impl.h`。
 
-`SDL_main_impl.h`当中会基于宏来添加对应平台的入口，入口函数会并调用函数`SDL_RunApp`。`SDL_RunApp`在`src/main`下有不同平台的实现，最终会调用`SDL_CallMainFunction`。
+调用链：
+
+```mermaid
+graph TD
+    平台入口 --> SDL_RunApp
+    SDL_RunApp --> SDL_CallMainFunction
+    SDL_CallMainFunction --> SDL_main
+    SDL_main --> SDL_MAIN_USE_CALLBACKS{SDL_MAIN_USE_CALLBACKS}
+    SDL_MAIN_USE_CALLBACKS -- Define --> SDL_EnterAppMainCallbacks
+    SDL_MAIN_USE_CALLBACKS -- Not Define --> main[User main]
+```
+
+`include/SDL3/SDL_main_impl.h`当中会基于宏来添加对应平台的入口，入口函数会并调用函数`SDL_RunApp`。
+
+`SDL_RunApp`在`src/main`下有不同平台的实现，最终会调用`SDL_CallMainFunction`，其内部调用传入的`SDL_main`函数指针。
+
+### SDL_EnterAppMainCallbacks
+
+调用链：
+
+```mermaid
+graph TD
+    SDL_EnterAppMainCallbacks --> SDL_InitMainCallbacks
+    SDL_EnterAppMainCallbacks --> GenericIterateMainCallbacks
+    SDL_EnterAppMainCallbacks --> SDL_QuitMainCallbacks
+    SDL_InitMainCallbacks --> SDL_AppInit
+    SDL_InitMainCallbacks --> SDL_InitSubSystem["SDL_InitSubSystem(SDL_INIT_EVENTS)"]
+    SDL_InitMainCallbacks --> SDL_AddEventWatch
+    GenericIterateMainCallbacks --> SDL_IterateMainCallbacks
+    SDL_IterateMainCallbacks --> SDL_AppIterate
+    SDL_QuitMainCallbacks --> SDL_AppQuit
+```
+
+- `SDL_EnterAppMainCallbacks`: 接受函数指针`SDL_AppInit`，`SDL_AppIterate`，`SDL_AppEvent`和`SDL_AppQuit`
+- `SDL_InitMainCallbacks`:
+  - 调用初始化函数`SDL_AppInit`
+  - 将函数指针`SDL_AppIterate`，`SDL_AppEvent`和`SDL_AppQuit`存储为静态变量
+  - 初始化事件子系统
+  - 增加事件回调函数`SDL_MainCallbackEventWatcher`
 
 ## Window
 
