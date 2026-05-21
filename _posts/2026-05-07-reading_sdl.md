@@ -69,6 +69,10 @@ graph TD
   - 初始化事件子系统
   - 增加事件回调函数`SDL_MainCallbackEventWatcher`
 
+## Event
+
+## Properties
+
 ## Window
 
 暴露给用户的入口函数`SDL_CreateWindowAndRenderer`。
@@ -234,5 +238,3 @@ graph TD
   - 最终调用`SDL_CreateSurfaceFrom`来创建`surface`。
 - `SDL_InitializeSurface`: 对传入的`SDL_Surface`对象进行初始化。
 - `SW_CreateRendererForSurface`: 初始化Render参数和函数指针。
-
-## Properties
