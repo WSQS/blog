@@ -238,3 +238,34 @@ graph TD
   - 最终调用`SDL_CreateSurfaceFrom`来创建`surface`。
 - `SDL_InitializeSurface`: 对传入的`SDL_Surface`对象进行初始化。
 - `SW_CreateRendererForSurface`: 初始化Render参数和函数指针。
+
+## Render
+
+### SDL_SetRenderDrawColor
+
+调用链：
+
+```mermaid
+graph TD
+    SDL_SetRenderDrawColor --> SDL_SetRenderDrawColorFloat
+    SDL_SetRenderDrawColorFloat --> CHECK_RENDERER_MAGIC
+```
+
+- `SDL_SetRenderDrawColorFloat`: 设置`SDL_Renderer`的`color`属性
+- `CHECK_RENDERER_MAGIC`: 对`SDL_Renderer`进行检查
+
+### SDL_RenderClear
+
+调用链：
+
+```mermaid
+graph TD
+    SDL_RenderClear --> CHECK_RENDERER_MAGIC
+    SDL_RenderClear --> QueueCmdClear
+    QueueCmdClear --> AllocateRenderCommand
+```
+
+- `QueueCmdClear`: 调用`AllocateRenderCommand`申请一个指令对象，并填充指令。
+- `AllocateRenderCommand`
+  - 从`SDL_Renderer`的render_commands_pool当中取出命令，若为空则申请一个
+  - 将得到的`SDL_RenderCommand`插入到`SDL_Renderer`的`render_commands`的链表当中
